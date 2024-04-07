@@ -9,17 +9,24 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@react-spring/web": "^9.7.3",
+    "@react-three/drei": "^9.105.2",
+    "@react-three/fiber": "^8.16.1",
+    "@react-three/postprocessing": "^2.16.2",
+    "@types/three": "^0.163.0",
+    "leva": "^0.9.35",
+    "next": "14.1.4",
     "react": "^18",
     "react-dom": "^18",
-    "next": "14.1.4"
+    "three": "^0.163.0"
   },
   "devDependencies": {
-    "typescript": "^5",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
     "autoprefixer": "^10.0.1",
     "postcss": "^8",
-    "tailwindcss": "^3.3.0"
+    "tailwindcss": "^3.3.0",
+    "typescript": "^5"
   }
 }
