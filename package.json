@@ -14,11 +14,15 @@
     "@react-three/fiber": "^8.16.1",
     "@react-three/postprocessing": "^2.16.2",
     "@types/three": "^0.163.0",
+    "daisyui": "^4.10.1",
+    "gltfjsx": "^6.2.16",
     "leva": "^0.9.35",
     "next": "14.1.4",
     "react": "^18",
     "react-dom": "^18",
-    "three": "^0.163.0"
+    "react-simple-typewriter": "^5.0.1",
+    "three": "^0.163.0",
+    "webpack": "^5.91.0"
   },
   "devDependencies": {
     "@types/node": "^20",
