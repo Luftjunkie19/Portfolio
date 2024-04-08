@@ -14,7 +14,6 @@ function Layout({children}: Props) {
 {children}
 </div>
 
-<Footer/>
 
   </div>)
 }

@@ -2,7 +2,7 @@ import Link from 'next/link';
 
 function Navbar() {
   return (
-      <div className="flex justify-around p-2 items-center bg-blue-400">
+      <div className="flex sticky top-0 left-0 z-10 justify-around p-2 items-center bg-blue-400">
           <p className=' text-white text-3xl font-bold'>ŁB</p>
 
           <div className="flex gap-8 text-white">
