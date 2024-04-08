@@ -20,6 +20,7 @@
     "next": "14.1.4",
     "react": "^18",
     "react-dom": "^18",
+    "react-scroll-parallax": "^3.4.5",
     "react-simple-typewriter": "^5.0.1",
     "three": "^0.163.0",
     "webpack": "^5.91.0"
