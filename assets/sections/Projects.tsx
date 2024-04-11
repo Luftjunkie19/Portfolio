@@ -1,22 +1,90 @@
-import React from 'react'
+import React from 'react';
+
+import Image from 'next/image';
+
+import {
+  CardBody,
+  CardContainer,
+  CardItem,
+} from '@/components/ui/3d-card';
+import { Button } from '@/components/ui/button';
+
+import bookfreakImage from '../images/bookfreak.png';
+import spotifyImage from '../images/spotify.png';
+import twitterImage from '../images/twitter1.png';
 
 type Props = {}
 
 function Projects({}: Props) {
   return (
-    <div>
-      <p>Projects</p>
+    <div className="flex gap-3 flex-col pl-2">
+      <p className="text-3xl font-bold">My Projects</p>
+      <p className=" max-w-xl">Through my entire journey with coding, I have built many great projects, that even haven't been stored on github, but here's the Top 3.</p>
 
-<div className="flex justify-around items-center">
-<div className="">
+<div className="flex flex-wrap gap-4 justify-evenly items-center">
+        <CardContainer className="inter-var">
+          <CardBody className="bg-gray-50 flex flex-col gap-1 relative group/card  dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-auto sm:w-[30rem] h-auto rounded-xl p-6 border">
+         
+            <CardItem className="w-full h-72">
+              <Image  className='w-full h-full object-cover rounded-lg' src={bookfreakImage} alt={''}/>
+         </CardItem>
+         
+            <CardItem>
+              <p className=" font-bold text-2xl">BookFreak (Mobile)</p>
+            </CardItem>
 
-  <p>BookFreak (Mobile)</p>
-</div>
-<div className="">
+               <CardItem>
+              <p>BookFreak is web as also an mobile app, which enables the users to track their reading progress, give recensions about book user has read, see the statistics about the most read category or ratio of user's read book's pages and entire book's pages...</p>
+            </CardItem>
 
-  <p>Spotify (Clone)</p>
-</div>
-<div className=""></div>
+            <CardItem className='flex justify-between py-2'>
+<Button>Show more</Button>
+            </CardItem>
+          </CardBody>
+</CardContainer>
+        
+        <CardContainer className="inter-var">
+          <CardBody className="bg-gray-50 flex flex-col gap-1 relative group/card  dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-auto sm:w-[30rem] h-auto rounded-xl p-6 border">
+         
+            <CardItem className="w-full h-72">
+              <Image  className='w-full h-full object-cover rounded-lg' src={spotifyImage} alt={''}/>
+         </CardItem>
+         
+            <CardItem>
+              <p className=" font-bold text-2xl">Spotify Clone</p>
+            </CardItem>
+
+               <CardItem>
+              <p>This is an web app based on UI of Spotify. This project has been built, in order to practice UI skills and also at that time newely learned tools like NextJS, TypeScript, Prisma, MongoDB...</p>
+            </CardItem>
+
+                      <CardItem className='flex justify-between py-2'>
+<Button>Show more</Button>
+            </CardItem>
+          </CardBody>
+        </CardContainer>
+        
+               <CardContainer className="inter-var">
+          <CardBody className="bg-gray-50 flex flex-col gap-1 relative group/card  dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-auto sm:w-[30rem] h-auto rounded-xl p-6 border">
+         
+            <CardItem className="w-full h-72">
+              <Image  className='w-full h-full object-cover rounded-lg' src={twitterImage} alt={''}/>
+         </CardItem>
+         
+            <CardItem>
+              <p className=" font-bold text-2xl">Twitter Clone</p>
+            </CardItem>
+
+               <CardItem>
+              <p>This is an web app based on UI of Twitter. This project has been created by means of youtube tutorial in order to practice my UI skills and also at that time newely learned tools like NextJS, TypeScript. I also learnt from it how to use Prisma and MongoDB...</p>
+            </CardItem>
+
+                      <CardItem className='flex justify-between py-2'>
+<Button>Show more</Button>
+            </CardItem>
+          </CardBody>
+</CardContainer>
+
 </div>
     </div>
   )

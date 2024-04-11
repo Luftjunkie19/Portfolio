@@ -20,7 +20,7 @@ type Props = {
 
 };
 
-function LanguageMesh({texturePath, position, techName}: Props) {
+function SphereMesh({texturePath, position, techName}: Props) {
   const texture = useTexture(texturePath);
   const meshRef=useRef<Mesh>(null);
 
@@ -33,12 +33,13 @@ if(meshRef.current){
   return (
     <Float floatIntensity={2} speed={1.75} rotationIntensity={1}>
 
-      <mesh castShadow receiveShadow scale={2.25}>
+      <mesh castShadow receiveShadow scale={2}>
       
         <sphereGeometry  />
-        <meshStandardMaterial polygonOffset polygonOffsetFactor={-5} flatShading color='lightblue'/>
-      <Decal rotation={[2 * Math.PI, 0, 6.25]} position={[0, 0, 1]} map={texture} scale={0.85} />
-      </mesh>
+        <meshBasicMaterial  polygonOffset polygonOffsetFactor={-5}  />
+      <Decal position={[0, 0, 1]} scale={2} map={texture}/>
+    <Decal position={[0, 0, 0]} scale={2} map={texture}/>
+          </mesh>
       
       
 
@@ -48,13 +49,13 @@ if(meshRef.current){
   );
 }
 
-function MeshCanvas({texturePath, position, techName}:Props) {
+function LanguageCanvas({texturePath, position, techName}:Props) {
   return (<Canvas frameloop='demand' gl={{preserveDrawingBuffer:true}} >
     <OrbitControls enableZoom={false} />
     <ambientLight />
     <directionalLight />
     
-    <LanguageMesh position={position} texturePath={texturePath} techName={techName} />
+    <SphereMesh position={position} texturePath={texturePath} techName={techName} />
 
     {/* <Text3D position={[-1, -2, 2]} scale={0.25} font={'./fonts/RobotoRegular.json'}>
       {techName}
@@ -64,4 +65,4 @@ function MeshCanvas({texturePath, position, techName}:Props) {
 }
 
 
-export default MeshCanvas;
+export default LanguageCanvas;

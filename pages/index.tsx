@@ -1,12 +1,9 @@
+import { Inter } from 'next/font/google';
+
 import HeroSection from '@/assets/sections/HeroSection';
-import Image from "next/image";
-import { Inter } from "next/font/google";
-import { Canvas } from "@react-three/fiber";
-import { CameraControls, OrbitControls } from "@react-three/drei";
-import LanguagesSection from '@/assets/sections/LanguagesSection';
+import LanguageSection from '@/assets/sections/LanguageSection';
 import Projects from '@/assets/sections/Projects';
-
-
+import TechSection from '@/assets/sections/TechSection';
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -14,8 +11,9 @@ export default function Home() {
   return (
     <div className="w-screen h-screen">
        <HeroSection />
-       <LanguagesSection/>
-       <Projects/>
+       <TechSection/>
+      <Projects />
+      <LanguageSection/>
       </div>
   );
 }
