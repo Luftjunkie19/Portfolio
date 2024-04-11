@@ -4,6 +4,7 @@ import { Inter } from "next/font/google";
 import { Canvas } from "@react-three/fiber";
 import { CameraControls, OrbitControls } from "@react-three/drei";
 import LanguagesSection from '@/assets/sections/LanguagesSection';
+import Projects from '@/assets/sections/Projects';
 
 
 
@@ -14,6 +15,7 @@ export default function Home() {
     <div className="w-screen h-screen">
        <HeroSection />
        <LanguagesSection/>
+       <Projects/>
       </div>
   );
 }
