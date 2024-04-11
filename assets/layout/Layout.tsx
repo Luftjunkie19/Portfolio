@@ -1,6 +1,5 @@
 import React from 'react';
 
-import Footer from './Footer';
 import Navbar from './Navbar';
 
 type Props = {children:React.ReactNode}
@@ -14,6 +13,7 @@ function Layout({children}: Props) {
 {children}
 </div>
 
+{/* <Footer /> */}
 
   </div>)
 }
