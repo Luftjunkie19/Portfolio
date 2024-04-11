@@ -32,8 +32,8 @@ const languages: LanguageItem[]=[
 
 
   return (
-    <div className=' h-3/4'>
-        <p className=' text-2xl font-semibold'>Languages, I know:</p>
+    <div className='h-fit'>
+        <p className=' text-2xl font-semibold'>Technologies, I have learned:</p>
         <Canvas>
           <ambientLight/>
           {languages.map((item, i)=>(<LanguageMesh techName={item.name} key={i} position={item.position} texturePath={item.path}/>))}
