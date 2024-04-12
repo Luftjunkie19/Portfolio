@@ -31,7 +31,7 @@ if(meshRef.current){
   })
 
   return (
-    <Float floatIntensity={2} speed={1.75} rotationIntensity={1}>
+    <Float floatIntensity={1.25} speed={1.75} rotationIntensity={0.6}>
 
       <mesh castShadow receiveShadow scale={2.25}>
       
