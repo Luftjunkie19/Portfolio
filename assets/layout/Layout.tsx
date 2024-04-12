@@ -9,7 +9,7 @@ function Layout({children}: Props) {
   
         <Navbar />
 
-        <div className="h-full w-full">  
+        <div className="h-full w-full bg-bgColour">  
 {children}
 </div>
 
