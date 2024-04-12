@@ -37,20 +37,7 @@ const socialMedia: ISocialMedia[] = [
     </Link>))}
         </div>
 
-        <Accordion collapsible  type='single' className=' max-w-md'>
-   <AccordionItem value={'First'}>
-    <AccordionTrigger>Why should you choose me?</AccordionTrigger>
-    <AccordionContent>
-        <p className='w-full'>Because although many obstacles from my life was able to learn all those tools by myself and hopefully will learn much more and much faster.</p>
-    </AccordionContent>
-   </AccordionItem>
-   <AccordionItem value={'Second'}>
-    <AccordionTrigger>Where is my uniqueness?</AccordionTrigger>
-    <AccordionContent>
-        <p className='w-full'>I learn quick and adjust to the changes fast enough to bring the best results I am able to.</p>
-    </AccordionContent>
-   </AccordionItem>
-</Accordion>
+
        </div>
 
     </div>

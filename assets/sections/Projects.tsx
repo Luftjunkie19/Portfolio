@@ -12,6 +12,7 @@ import { Button } from '@/components/ui/button';
 import bookfreakImage from '../images/bookfreak.png';
 import spotifyImage from '../images/spotify.png';
 import twitterImage from '../images/twitter1.png';
+import Link from 'next/link';
 
 type Props = {}
 
@@ -38,7 +39,9 @@ function Projects({}: Props) {
             </CardItem>
 
             <CardItem className='flex justify-between py-2'>
+            <Link href='/bookfreak'>
 <Button>Show more</Button>
+                        </Link>
             </CardItem>
           </CardBody>
 </CardContainer>
@@ -59,7 +62,9 @@ function Projects({}: Props) {
             </CardItem>
 
                       <CardItem className='flex justify-between py-2'>
+                        <Link href='/spotify-clone'>
 <Button>Show more</Button>
+                        </Link>
             </CardItem>
           </CardBody>
         </CardContainer>
@@ -80,7 +85,9 @@ function Projects({}: Props) {
             </CardItem>
 
                       <CardItem className='flex justify-between py-2'>
+                      <Link href='/twitter-clone'>
 <Button>Show more</Button>
+                        </Link>
             </CardItem>
           </CardBody>
 </CardContainer>
