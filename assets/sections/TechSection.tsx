@@ -31,7 +31,7 @@ const languages: LanguageItem[]=[
 
 
   return (
-    <div className='h-fit'>
+    <div id='techs' className='h-fit'>
         <p className=' text-2xl font-semibold'>Technologies, I have learned:</p>
       <div className='flex p-6 gap-2 max-w-5xl justify-center items-center m-0 mx-auto flex-wrap'>     
         {languages.map((item, i) => (
