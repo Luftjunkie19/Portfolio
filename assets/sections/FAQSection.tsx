@@ -5,7 +5,7 @@ type Props = {}
 
 function FAQSection({}: Props) {
   return (
-    <div className='flex justify-around items-center'>
+    <div className='flex justify-around items-center text-white'>
 <div className="">
     <p className="text-xl font-bold">FAQ</p>
     <p className='max-w-md'>Questions that are likely to be asked already answered, so you would not have to waste time and start a real talk.</p>

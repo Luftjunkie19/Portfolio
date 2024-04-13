@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { Suspense } from 'react';
 
 import { Typewriter } from 'react-simple-typewriter';
 
 import Scene from '../Scene';
+import Loader from '../Loader';
 
 function HeroSection() {
   return (
@@ -15,7 +16,10 @@ function HeroSection() {
             </p>
           </div>
           <div className="w-1/2 h-[28rem]">
+            <Suspense fallback={<Loader/>}>
+
           <Scene/>
+            </Suspense>
           </div>
     </div>
   )

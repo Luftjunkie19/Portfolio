@@ -5,11 +5,11 @@ import Navbar from './Navbar';
 type Props = {children:React.ReactNode}
 
 function Layout({children}: Props) {
-    return (<div className='h-screen w-screen'>
+    return (<div className='min-h-screen w-screen'>
   
         <Navbar />
 
-        <div className="h-full w-full bg-bgColour">  
+        <div className=" h-full w-full bg-bgColour">  
 {children}
 </div>
 
