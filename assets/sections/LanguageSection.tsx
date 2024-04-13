@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { Suspense } from 'react';
 
 import { Progress } from '@/components/ui/progress';
 
 import SphereMesh from '../meshes/SphereMesh';
+import Loader from '../Loader';
 
 type Props = {}
 
@@ -10,12 +11,15 @@ function LanguageSection({}: Props) {
 
   return (
     <>
-    <p className=' text-2xl font-semibold'>Languages, I know.</p>
-      <div className=' grid lg:grid-cols-2 gap-6'>
+    <p className=' text-2xl font-semibold text-white'>Languages, I know.</p>
+      <div className=' grid lg:grid-cols-2 gap-6 text-white'>
             <div className="flex gap-4 items-center max-w-[90%] justify-between">
+            <Suspense fallback={<Loader/>}>
               <div className='w-48 h-48'>
                   <SphereMesh texturePath={'./textures/polish.jpg'} position={[0,0,0]} techName={'German'}/>
               </div>
+            </Suspense>
+
               <div className="flex flex-col gap-2">
                   <p className="text-4xl font-medium">Polish</p>
                   <p>Proficiency: Native</p>
@@ -25,9 +29,11 @@ function LanguageSection({}: Props) {
           </div> 
 
           <div className="flex gap-4 items-center max-w-[90%] justify-between">
+            <Suspense fallback={<Loader/>}>
               <div className='w-48 h-48'>
                   <SphereMesh texturePath={'./textures/german.jpg'} position={[0,0,0]} techName={'German'}/>
               </div>
+            </Suspense>
               <div className="flex flex-col gap-2">
                   <p className="text-4xl font-medium">German</p>
                   <p>Proficiency: C1</p>
@@ -37,9 +43,11 @@ function LanguageSection({}: Props) {
           </div>  
            
            <div className="flex gap-4 items-center max-w-[90%] justify-between">
+           <Suspense fallback={<Loader/>}>
               <div className='w-48 h-48'>
                   <SphereMesh texturePath={'./textures/english.jpg'} position={[0,0,0]} techName={'German'}/>
               </div>
+           </Suspense>
               <div className="flex flex-col gap-2">
                   <p className="text-4xl font-medium">English</p>
                   <p>Proficiency: B2+</p>
@@ -49,9 +57,11 @@ function LanguageSection({}: Props) {
           </div>  
 
                <div className="flex gap-4 items-center max-w-[90%] justify-between">
+               <Suspense fallback={<Loader/>}>
               <div className='w-48 h-48'>
                   <SphereMesh texturePath={'./textures/finnish.png'} position={[0,0,0]} techName={'German'}/>
               </div>
+               </Suspense>
               <div className="flex flex-col gap-2">
                   <p className="text-4xl font-medium">Finnish</p>
                   <p>Proficiency: A1</p>
