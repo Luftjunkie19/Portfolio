@@ -2,16 +2,26 @@ import Link from 'next/link';
 
 function Navbar() {
   return (
-      <div className="flex sticky w-full top-0 left-0 z-10 justify-around p-2 items-center bg-darkBlue">
-          <Link href={'/'} className=' text-white text-lg font-bold'>Luftjunkie_19</Link>
-
-          <div className="sm:hidden lg:flex gap-8 text-white">
-              <Link href='#about'>About me</Link>
-              <Link href='#projects'>Projects</Link>
-              <Link href="#techs">Technologies</Link>
-              
-          </div>
-    </div>
+<div className="navbar sticky top-0 left-0 z-50 bg-darkBlue">
+  <div className="flex-1">
+    <a className="btn text-white btn-ghost text-xl">Luftjunkie_19</a>
+  </div>
+  <div className="flex-none">
+    <ul className="menu menu-horizontal px-1">
+      <li className='sm:hidden lg:block'><a href='#techs'>Technologies</a></li>
+      <li>
+        <details>
+          <summary>
+          </summary>
+          <ul className="p-2 bg-base-100 rounded-t-none">
+            <li><a>Languages</a></li>
+            <li><a>Contact</a></li>
+          </ul>
+        </details>
+      </li>
+    </ul>
+  </div>
+</div>
   )
 }
 

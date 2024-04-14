@@ -9,6 +9,7 @@
     overflow-x: hidden;
     background-color: darkgray;
     font-family: 'Poppins', sans-serif;
+    scroll-behavior: smooth;
   }
 
   

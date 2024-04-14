@@ -1,0 +1,21 @@
+.meBg{
+    animation:alternate float 1s infinite;
+ 
+   
+}
+
+
+
+.spaceBg{
+    background: url('../assets/images/space.jpg') fixed no-repeat;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(-20px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
+}
