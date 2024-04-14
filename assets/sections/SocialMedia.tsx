@@ -8,7 +8,7 @@ import MeshCanvas from '../meshes/LanguageMesh'
 import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from '@/components/ui/accordion'
 import Loader from '../Loader'
 type Props = {}
-
+import {motion} from 'framer-motion';
 
 interface ISocialMedia {
   link: string,
@@ -17,6 +17,27 @@ interface ISocialMedia {
 }
 
 function SocialMedia({}: Props) {
+
+  const variants= {
+    hidden:{
+      scale:0,
+      opacity:0,
+      transition:{
+        duration:0.7,
+        type:"spring",
+        bounce:0.5
+      }
+    },
+    visible:{
+      scale:1,
+      opacity:1,
+      transition:{
+        duration:0.7,
+        type:"spring",
+        bounce:0.5
+      }
+    }
+  }
 
 const socialMedia: ISocialMedia[] = [
     {link:'https://github.com/Luftjunkie19', logo:'./textures/github.png', colour:'white'}, 
@@ -27,9 +48,9 @@ const socialMedia: ISocialMedia[] = [
   return (
     <div className='flex sm:flex-col lg:flex-row gap-2 items-center justify-around'>
       <Suspense fallback={<Loader/>}>
-       <div className="w-80 h-80">
+       <motion.div variants={variants} initial='hidden' whileInView={'visible'} viewport={{once:true}} className="w-80 h-80">
         <DonutCanvas />
-       </div>
+       </motion.div>
       </Suspense>
 
        <div className="flex flex-col gap-4">
@@ -39,7 +60,9 @@ const socialMedia: ISocialMedia[] = [
 {socialMedia.map((item:ISocialMedia, i:any)=>(
    <Suspense fallback={<Loader/>}>
 <Link className=' w-24 h-24' href={item.link}>
+  <motion.div variants={variants} initial='hidden' whileInView={'visible'} viewport={{once:true}} className="w-full h-full">
     <MeshCanvas backgroundColour={item.colour} texturePath={item.logo} position={[0, 0, 0]} techName={''}/>
+  </motion.div>
     </Link>    
    </Suspense>
 ))}

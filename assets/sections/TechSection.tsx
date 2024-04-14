@@ -1,5 +1,5 @@
 import React, { Suspense } from 'react';
-
+import {motion} from 'framer-motion';
 import LanguageMesh from '../meshes/LanguageMesh';
 import Loader from '../Loader';
 
@@ -13,6 +13,28 @@ export interface LanguageItem{
 }
 function TechSection({}: Props) {
 
+  const ballsVariants={
+    notviewport:{
+      opacity:0,
+      y:100,
+      scale:0,
+      transition:{
+        duration:0.5,
+        type:'spring',
+        bounce:0.6
+      }
+    },
+    inview:{
+      opacity:1,
+      y:0,
+      scale:1,
+      transition:{
+        duration:0.5,
+        type:'spring',
+        bounce:0.6
+      }
+    }
+  }
 
 const languages: LanguageItem[]=[
 {name:'React (Native)', path:'./textures/react.png', position:[-2, 0, 1], colour:'#232424' }, 
@@ -39,10 +61,10 @@ const languages: LanguageItem[]=[
         {languages.map((item, i) => (
           <Suspense fallback={<Loader/>}>
 
-          <div className='lg:w-44 lg:h-44 sm:w-32 sm:h-32'>
+          <motion.div variants={ballsVariants} animate initial={'notviewport'} whileInView={'inview'} viewport={{once:true}} className='lg:w-44 lg:h-44 sm:w-32 sm:h-32'>
             <LanguageMesh backgroundColour={item.colour} techName={item.name} key={i} position={item.position} texturePath={item.path}/>
             <p className=" text-center text-white text-lg">{item.name}</p>
-            </div>
+            </motion.div>
           </Suspense>
           ))}
     </div>

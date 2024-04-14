@@ -1,5 +1,5 @@
 import React from 'react';
-
+import {motion} from 'framer-motion';
 import Image from 'next/image';
 
 import {
@@ -17,12 +17,40 @@ import Link from 'next/link';
 type Props = {}
 
 function Projects({}: Props) {
+
+  const variants= {
+    hidden:{
+      opacity:0,
+      scale:0,
+      transition:{
+        delayChildren: 0.5,
+        when:'beforeChildren',
+        staggerDirection:1,
+        type:'spring',
+        bounce:0.5,
+        duration:0.6
+      }
+    },
+    visible:{
+      opacity:1,
+      scale:1,
+      transition:{
+        delayChildren: 0.5,
+        when:'beforeChildren',
+        staggerDirection:1,
+        type:'spring',
+        bounce:0.5,
+        duration:0.6
+      }
+    }
+  }
+
   return (
     <div className="flex gap-3 flex-col pl-2">
       <p className="text-3xl font-bold text-white">My Projects</p>
       <p className=" max-w-xl text-white">Through my entire journey with coding, I have built many great projects, that even haven't been stored on github, but here's the Top 3.</p>
 
-<div className="flex flex-wrap gap-6 items-center justify-around">
+<motion.div variants={variants} initial={'hidden'} whileInView={'visible'} viewport={{once:true}} className="flex flex-wrap gap-6 items-center justify-around">
         <CardContainer className="inter-var">
           <CardBody className="bg-gray-50 flex flex-col gap-1 relative group/card  dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-auto max-w-sm h-auto rounded-xl p-4 border">
          
@@ -92,7 +120,7 @@ function Projects({}: Props) {
           </CardBody>
 </CardContainer>
 
-</div>
+</motion.div>
     </div>
   )
 }

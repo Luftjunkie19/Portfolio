@@ -5,7 +5,7 @@ import React, {
   useRef,
   useState,
 } from 'react';
-
+import {motion} from 'framer-motion';
 import { cn } from '@/lib/utils';
 
 const MouseEnterContext = createContext<
@@ -37,6 +37,29 @@ export const CardContainer = ({
     setIsMouseEntered(true);
     if (!containerRef.current) return;
   };
+
+  const variants={
+    hidden:{
+      scale:0,
+      y:-50,
+      opacity:0,
+      transition:{
+        duration:0.5,
+        type:'spring',
+        bounce:0.6
+      }
+    },
+    visible:{
+      scale:1,
+      y:0,
+      opacity:1,
+      transition:{
+        duration:0.5,
+        type:'spring',
+        bounce:0.6
+      }
+    }
+  }
  
   const handleMouseLeave = (e: React.MouseEvent<HTMLDivElement>) => {
     if (!containerRef.current) return;
@@ -45,7 +68,8 @@ export const CardContainer = ({
   };
   return (
     <MouseEnterContext.Provider value={[isMouseEntered, setIsMouseEntered]}>
-      <div
+      <motion.div 
+      variants={variants}
         className={cn(
           "py-20 flex items-center justify-center",
           containerClassName
@@ -69,7 +93,7 @@ export const CardContainer = ({
         >
           {children}
         </div>
-      </div>
+      </motion.div>
     </MouseEnterContext.Provider>
   );
 };
