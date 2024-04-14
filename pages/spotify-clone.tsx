@@ -56,25 +56,25 @@ function SpotifyDetail({}: Props) {
 
   return (
     <div className=' min-h-screen'>
-    <div className="flex justify-around items-center gap-6 p-6">
+    <div className="flex sm:flex-col lg:flex-row justify-around items-center gap-6 py-6">
     <Carousel opts={{
       align: "start",
-    }} className='w-64'>
+    }} className='lg:w-64 lg:h-64 sm:w-52 sm:h-52'>
       <CarouselContent>
         <CarouselItem>
-          <Image className='w-64 h-64 object-cover rounded-lg'  src={spotifyImage} alt={''}/>
+          <Image className='lg:w-64 lg:h-64 sm:w-52 sm:h-52 object-cover rounded-lg'  src={spotifyImage} alt={''}/>
         </CarouselItem>
         <CarouselItem >
-          <Image className='w-64 h-64 object-cover rounded-lg'  src={spotifyImage2} alt={''}/>
+          <Image className='lg:w-64 lg:h-64 sm:w-52 sm:h-52 object-cover rounded-lg'  src={spotifyImage2} alt={''}/>
         </CarouselItem>
         <CarouselItem>
-          <Image className='w-64 h-64 object-cover rounded-lg'  src={spotifyImage3} alt={''}/>
+          <Image className='lg:w-64 lg:h-64 sm:w-52 sm:h-52 object-cover rounded-lg'  src={spotifyImage3} alt={''}/>
         </CarouselItem>
         <CarouselItem>
-          <Image className='w-64 h-64 object-cover rounded-lg'  src={spotifyImage4} alt={''}/>
+          <Image className='lg:w-64 lg:h-64 sm:w-52 sm:h-52 object-cover rounded-lg'  src={spotifyImage4} alt={''}/>
         </CarouselItem>
         <CarouselItem>
-          <Image className='w-64 h-64 object-cover rounded-lg'  src={spotifyImage5} alt={''}/>
+          <Image className='lg:w-64 lg:h-64 sm:w-52 sm:h-52 object-cover rounded-lg'  src={spotifyImage5} alt={''}/>
         </CarouselItem>
       </CarouselContent>
       <CarouselPrevious/>

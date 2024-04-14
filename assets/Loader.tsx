@@ -7,8 +7,8 @@ type Props = {}
 function Loader({}: Props) {
    const progress = useProgress();
   return (
-    <div className='absolute top-0 left-0 w-screen h-screen bg-black/25'>
-  <div className="radial-progress bg-primary text-primary-content border-4 border-primary" style={{"--value":progress.loaded}} role="progressbar">${progress.loaded}%</div>
+    <div className='w-full h-full flex justify-center items-center bg-black/25'>
+  <div className="radial-progress text-white bg-primary border-4 border-white" style={{"--value":progress.progress}} role="progressbar">${progress.progress}%</div>
     </div>
   )
 }

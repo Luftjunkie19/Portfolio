@@ -13,6 +13,7 @@ function FirstScene() {
 useEffect(()=>{
   actions.Animation?.play()
 }, []);
+
   return ( 
     <mesh ref={ref}>
 <primitive scale={0.25} object={model.scene}/>

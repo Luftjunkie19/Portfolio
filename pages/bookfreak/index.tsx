@@ -38,38 +38,38 @@ function DetailPage({}: Props) {
 }]
   return (
     <div>
-      <div className="flex justify-around items-center gap-6 p-6">
-      <Carousel  opts={{
+      <div className="flex sm:flex-col lg:flex-row lg:justify-around lg:items-center gap-6 py-6">
+      <Carousel   opts={{
         align: "start",
-      }} className='w-64'>
+      }} className='sm:w-52 sm:h-52 lg:w-64 lg:h-64 self-center'>
         <CarouselContent>
           <CarouselItem>
-            <Image className='w-64 h-64 object-cover rounded-lg'  src={bookfreakImage} alt={''}/>
+            <Image className='sm:w-52 sm:h-52 lg:w-64 lg:h-64 object-cover rounded-lg'  src={bookfreakImage} alt={''}/>
           </CarouselItem>
           <CarouselItem >
-            <Image className='w-64 h-64 object-cover rounded-lg'  src={bookSc1} alt={''}/>
+            <Image className='sm:w-52 sm:h-52 lg:w-64 lg:h-64 object-cover rounded-lg'  src={bookSc1} alt={''}/>
           </CarouselItem>
           <CarouselItem>
-            <Image className='w-64 h-64 object-cover rounded-lg'  src={bookSc2} alt={''}/>
+            <Image className='sm:w-52 sm:h-52 lg:w-64 lg:h-64 object-cover rounded-lg'  src={bookSc2} alt={''}/>
           </CarouselItem>
           <CarouselItem>
-            <Image className='w-64 h-64 object-cover rounded-lg'  src={bookSc3} alt={''}/>
+            <Image className='sm:w-52 sm:h-52 lg:w-64 lg:h-64 object-cover rounded-lg'  src={bookSc3} alt={''}/>
           </CarouselItem>
           <CarouselItem>
-            <Image className='w-64 h-64 object-cover rounded-lg'  src={bookSc4} alt={''}/>
+            <Image className='sm:w-52 sm:h-52 lg:w-64 lg:h-64 object-cover rounded-lg'  src={bookSc4} alt={''}/>
           </CarouselItem>
         </CarouselContent>
         <CarouselPrevious/>
         <CarouselNext/>
       </Carousel>
-<div className="flex flex-col gap-2 max-w-sm text-white">
+<div className="flex flex-col gap-2 max-w-xl lg:max-w-sm text-white">
   <p className=' text-3xl font-bold'>BookFreak</p>
   <p className=' text-sm'>BookFreak is an unique project, which has been a lot of time devoted on. BookFreak's goal is to enable readers and users to freely discuss their opinions about a book, track their reading progress, but also the most read book's category.
     Although BookFreak is a project that has been in development for a long time, it is still in its early stages and promise it will be only better in case of UI and functionalities.
   </p>
 
   <p className='text-xl font-semibold'>Used Technologies</p>
-<div className="flex gap-4">
+<div className="flex gap-4 flex-wrap">
   {usedTechs.map((item:LanguageItem, i:any)=>(<Suspense fallback={<Loader/>}>
     <div className='w-24 h-24'>
       <MeshCanvas backgroundColour={item.colour} texturePath={item.path} position={item.position} techName={item.name}/>
