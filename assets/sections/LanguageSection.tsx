@@ -13,7 +13,7 @@ function LanguageSection({}: Props) {
     <>
     <p className=' text-2xl font-semibold text-white'>Languages, I know.</p>
       <div className=' grid lg:grid-cols-2 gap-6 text-white'>
-            <div className="flex gap-4 items-center max-w-[90%] justify-between">
+            <div className="flex sm:flex-col lg:max-w-[90%] lg:flex-row gap-4 lg:items-center justify-between p-2">
             <Suspense fallback={<Loader/>}>
               <div className='w-48 h-48'>
                   <SphereMesh texturePath={'./textures/polish.jpg'} position={[0,0,0]} techName={'German'}/>
@@ -28,7 +28,7 @@ function LanguageSection({}: Props) {
               </div>
           </div> 
 
-          <div className="flex gap-4 items-center max-w-[90%] justify-between">
+          <div className="flex sm:flex-col lg:flex-row lg:max-w-[90%] gap-4 lg:items-center justify-between p-2">
             <Suspense fallback={<Loader/>}>
               <div className='w-48 h-48'>
                   <SphereMesh texturePath={'./textures/german.jpg'} position={[0,0,0]} techName={'German'}/>
@@ -42,7 +42,7 @@ function LanguageSection({}: Props) {
               </div>
           </div>  
            
-           <div className="flex gap-4 items-center max-w-[90%] justify-between">
+           <div className="flex sm:flex-col lg:max-w-[90%] lg:flex-row gap-4 lg:items-center justify-between p-2">
            <Suspense fallback={<Loader/>}>
               <div className='w-48 h-48'>
                   <SphereMesh texturePath={'./textures/english.jpg'} position={[0,0,0]} techName={'German'}/>
@@ -56,7 +56,7 @@ function LanguageSection({}: Props) {
               </div>
           </div>  
 
-               <div className="flex gap-4 items-center max-w-[90%] justify-between">
+               <div className="flex sm:flex-col lg:flex-row lg:max-w-[90%] gap-4 lg:items-center justify-between p-2">
                <Suspense fallback={<Loader/>}>
               <div className='w-48 h-48'>
                   <SphereMesh texturePath={'./textures/finnish.png'} position={[0,0,0]} techName={'German'}/>

@@ -22,9 +22,9 @@ function Projects({}: Props) {
       <p className="text-3xl font-bold text-white">My Projects</p>
       <p className=" max-w-xl text-white">Through my entire journey with coding, I have built many great projects, that even haven't been stored on github, but here's the Top 3.</p>
 
-<div className="flex flex-wrap gap-4 justify-evenly items-center">
+<div className="flex flex-wrap gap-6 items-center justify-around">
         <CardContainer className="inter-var">
-          <CardBody className="bg-gray-50 flex flex-col gap-1 relative group/card  dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-auto max-w-md h-auto rounded-xl p-6 border">
+          <CardBody className="bg-gray-50 flex flex-col gap-1 relative group/card  dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-auto max-w-sm h-auto rounded-xl p-4 border">
          
             <CardItem className="w-full h-72">
               <Image  className='w-full h-full object-cover rounded-lg' src={bookfreakImage} alt={''}/>
@@ -47,7 +47,7 @@ function Projects({}: Props) {
 </CardContainer>
         
         <CardContainer className="inter-var">
-          <CardBody className="bg-gray-50 flex flex-col gap-1 relative group/card  dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-auto sm:w-[30rem] h-auto rounded-xl p-6 border">
+          <CardBody className="bg-gray-50 flex flex-col gap-1 relative group/card  dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-auto max-w-sm h-auto rounded-xl p-6 border">
          
             <CardItem className="w-full h-72">
               <Image  className='w-full h-full object-cover rounded-lg' src={spotifyImage} alt={''}/>
@@ -70,7 +70,7 @@ function Projects({}: Props) {
         </CardContainer>
         
                <CardContainer className="inter-var">
-          <CardBody className="bg-gray-50 flex flex-col gap-1 relative group/card  dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-auto sm:w-[30rem] h-auto rounded-xl p-6 border">
+          <CardBody className="bg-gray-50 flex flex-col gap-1 relative group/card  dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-auto max-w-sm h-auto rounded-xl p-6 border">
          
             <CardItem className="w-full h-72">
               <Image  className='w-full h-full object-cover rounded-lg' src={twitterImage} alt={''}/>

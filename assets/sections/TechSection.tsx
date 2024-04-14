@@ -34,12 +34,12 @@ const languages: LanguageItem[]=[
 
   return (
     <div id='techs' className='h-fit'>
-        <p className=' text-2xl font-semibold'>Technologies, I have learned:</p>
-      <div className='flex p-6 gap-2 max-w-5xl justify-center items-center m-0 mx-auto flex-wrap'>     
+        <p className=' text-3xl text-white font-semibold'>Technologies, I have learned</p>
+      <div className='flex p-6 gap-3 max-w-5xl justify-center items-center m-0 mx-auto flex-wrap'>     
         {languages.map((item, i) => (
           <Suspense fallback={<Loader/>}>
 
-          <div className='w-44 h-44'>
+          <div className='lg:w-44 lg:h-44 sm:w-32 sm:h-32'>
             <LanguageMesh backgroundColour={item.colour} techName={item.name} key={i} position={item.position} texturePath={item.path}/>
             <p className=" text-center text-white text-lg">{item.name}</p>
             </div>

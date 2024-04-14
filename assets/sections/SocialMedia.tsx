@@ -25,7 +25,7 @@ const socialMedia: ISocialMedia[] = [
 ]
 
   return (
-    <div className='flex gap-2 items-center justify-around'>
+    <div className='flex sm:flex-col lg:flex-row gap-2 items-center justify-around'>
       <Suspense fallback={<Loader/>}>
        <div className="w-80 h-80">
         <DonutCanvas />
