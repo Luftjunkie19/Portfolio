@@ -31,7 +31,7 @@ const config = {
           
         green: "#5b7400",
                  
-        darkBlue: "#0000ff",
+        darkBlue: "#009bff",
                  
         neutral: "#0d0c01",
                  

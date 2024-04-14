@@ -8,6 +8,7 @@ import {
   OrbitControls,
   Scroll,
   ScrollControls,
+  useScroll,
   useTexture,
 } from '@react-three/drei';
 import {
@@ -25,13 +26,15 @@ type Props = {
 
 function LanguageMesh({texturePath, position, techName, backgroundColour}: Props) {
   const texture = useTexture(texturePath);
+const scroll=useScroll();
+const meshRef=useRef<Mesh>(null);
 
 
   return (
     <Scroll>
          <Float floatIntensity={1.25} speed={1.75} rotationIntensity={0.6}>
 
-<mesh castShadow receiveShadow scale={2.25}>
+<mesh ref={meshRef} castShadow receiveShadow scale={2.25}>
 
   <sphereGeometry  />
   <meshStandardMaterial polygonOffset polygonOffsetFactor={-5} flatShading color={backgroundColour ? backgroundColour : 'lightblue'}/>
@@ -51,7 +54,7 @@ function MeshCanvas({texturePath, position, techName, backgroundColour}:Props) {
     <ambientLight />
     <directionalLight />
     
-    <ScrollControls>
+    <ScrollControls style={{overflowY:'hidden'}}>
 
     <LanguageMesh backgroundColour={backgroundColour} position={position} texturePath={texturePath} techName={techName} />
     </ScrollControls>

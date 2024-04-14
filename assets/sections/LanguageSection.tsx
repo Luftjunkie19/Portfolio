@@ -14,6 +14,7 @@ interface languageSection{
   name: string;
   proficiency: string;
   description: string;
+  progress: number;
 }
 
 const variants= {
@@ -41,12 +42,15 @@ const languages: languageSection[] = [{
   path:'./textures/polish.jpg',
   name: 'Polish',
   proficiency: 'Native',
-  description: 'My mother tongue.'
+  description: 'My mother tongue.',
+  progress:100
 },
  {path:'./textures/german.jpg', name:'German', 
  proficiency:'C1', 
+ progress:90,
  description:`A language that I treat as my second native tongue, because I lived in Germany for 2/3 years where I've got the contact with the native Language.`},  
 {  path: './textures/english.jpg',
+progress:80,
 name: 'English',
 proficiency: 'B2+',
 description: `A language that I started really to learn 2 years ago, meaning that since that moment I have enhanced my English skills considerably.`
@@ -54,6 +58,7 @@ description: `A language that I started really to learn 2 years ago, meaning tha
   path: './textures/finnish.png',
   name: 'Finnish',
   proficiency: 'A1',
+  progress:10,
   description: 'A language I started to learn a year ago. In order to know more than 2 foreign languages and also to know better the culture.'
 },]
 
@@ -71,7 +76,7 @@ description: `A language that I started really to learn 2 years ago, meaning tha
               <motion.div variants={variants} initial={'hidden'} whileInView={'visible'} viewport={{once:true}} className="flex flex-col gap-2">
                   <p className="text-4xl font-medium">{item.name}</p>
                   <p>Proficiency: {item.proficiency}</p>
-                  <Progress className='w-64' value={100} />
+                  <Progress className='w-64' value={item.progress} />
                   <p>{item.description}</p>
               </motion.div>
           </div> ))}
