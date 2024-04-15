@@ -1,6 +1,8 @@
 import React from 'react';
-import {motion} from 'framer-motion';
+
+import { motion } from 'framer-motion';
 import Image from 'next/image';
+import Link from 'next/link';
 
 import {
   CardBody,
@@ -12,7 +14,6 @@ import { Button } from '@/components/ui/button';
 import bookfreakImage from '../images/bookfreak.png';
 import spotifyImage from '../images/spotify.png';
 import twitterImage from '../images/twitter1.png';
-import Link from 'next/link';
 
 type Props = {}
 
@@ -23,30 +24,26 @@ function Projects({}: Props) {
       opacity:0,
       scale:0,
       transition:{
-        delayChildren: 0.5,
-        when:'beforeChildren',
-        staggerDirection:1,
+      delayChildren: 0.3,
+      staggerChildren: 0.2,
         type:'spring',
         bounce:0.5,
-        duration:0.6
       }
     },
     visible:{
       opacity:1,
       scale:1,
       transition:{
-        delayChildren: 0.5,
-        when:'beforeChildren',
-        staggerDirection:1,
+        delayChildren: 0.3,
+      staggerChildren: 0.2,
         type:'spring',
         bounce:0.5,
-        duration:0.6
       }
     }
   }
 
   return (
-    <div className="flex gap-3 flex-col pl-2">
+    <div className="flex gap-3 flex-col pl-2 my-6">
       <p className="text-3xl font-bold text-white">My Projects</p>
       <p className=" max-w-xl text-white">Through my entire journey with coding, I have built many great projects, that even haven't been stored on github, but here's the Top 3.</p>
 

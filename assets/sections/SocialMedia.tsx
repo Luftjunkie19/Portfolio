@@ -1,14 +1,13 @@
-import React, { Suspense } from 'react'
-import DonutCanvas from '../meshes/Donut'
-import { StaticImageData } from 'next/image'
-import { Sphere } from '@react-three/drei'
-import LanguageCanvas from '../meshes/SphereMesh'
-import Link from 'next/link'
-import MeshCanvas from '../meshes/LanguageMesh'
-import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from '@/components/ui/accordion'
-import Loader from '../Loader'
+import React, { Suspense } from 'react';
+
+import { motion } from 'framer-motion';
+import Link from 'next/link';
+
+import Loader from '../Loader';
+import DonutCanvas from '../meshes/Donut';
+import MeshCanvas from '../meshes/LanguageMesh';
+
 type Props = {}
-import {motion} from 'framer-motion';
 
 interface ISocialMedia {
   link: string,
@@ -46,7 +45,7 @@ const socialMedia: ISocialMedia[] = [
 ]
 
   return (
-    <div className='flex sm:flex-col lg:flex-row gap-2 items-center justify-around'>
+    <div className='flex sm:flex-col lg:flex-row gap-2 items-center justify-around  bg-blue-500/20'>
       <Suspense fallback={<Loader/>}>
        <motion.div variants={variants} initial='hidden' whileInView={'visible'} viewport={{once:true}} className="w-80 h-80">
         <DonutCanvas />

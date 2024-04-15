@@ -1,9 +1,11 @@
 import React, { Suspense } from 'react';
-import {motion} from 'framer-motion';
+
+import { motion } from 'framer-motion';
+
 import { Progress } from '@/components/ui/progress';
 
-import SphereMesh from '../meshes/SphereMesh';
 import Loader from '../Loader';
+import SphereMesh from '../meshes/SphereMesh';
 
 type Props = {}
 
@@ -66,14 +68,14 @@ description: `A language that I started really to learn 2 years ago, meaning tha
     <>
     <p className=' text-2xl font-semibold text-white'>Languages, I know.</p>
       <div className=' grid lg:grid-cols-2 gap-6 text-white'>
-        {languages.map((item:languageSection)=>(<div className="flex sm:flex-col lg:max-w-[90%] lg:flex-row gap-4 lg:items-center justify-between p-2">
+        {languages.map((item:languageSection)=>(<div className="flex sm:flex-col lg:max-w-[90%] lg:flex-row gap-4 lg:items-center p-2">
             <Suspense fallback={<Loader/>}>
               <motion.div variants={variants} initial={'hidden'} whileInView={'visible'} viewport={{once:true}} className='w-48 h-48'>
                   <SphereMesh texturePath={item.path} position={[0,0,0]} techName={item.name}/>
               </motion.div>
             </Suspense>
 
-              <motion.div variants={variants} initial={'hidden'} whileInView={'visible'} viewport={{once:true}} className="flex flex-col gap-2">
+              <motion.div variants={variants} initial={'hidden'} whileInView={'visible'} viewport={{once:true}} className="flex flex-col gap-2 max-w-md">
                   <p className="text-4xl font-medium">{item.name}</p>
                   <p>Proficiency: {item.proficiency}</p>
                   <Progress className='w-64' value={item.progress} />

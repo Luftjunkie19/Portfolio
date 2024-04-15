@@ -1,7 +1,9 @@
 import React, { Suspense } from 'react';
-import {motion} from 'framer-motion';
-import LanguageMesh from '../meshes/LanguageMesh';
+
+import { motion } from 'framer-motion';
+
 import Loader from '../Loader';
+import LanguageMesh from '../meshes/LanguageMesh';
 
 type Props = {}
 
@@ -55,9 +57,9 @@ const languages: LanguageItem[]=[
 
 
   return (
-    <div id='techs' className='h-fit'>
+    <div id='techs' className='h-fit p-2'>
         <p className=' text-3xl text-white font-semibold'>Technologies, I have learned</p>
-      <div className='flex p-6 gap-3 max-w-5xl justify-center items-center m-0 mx-auto flex-wrap'>     
+      <div className='flex lg:p-6 sm:p-3 sm:gap-8  lg:gap-3 max-w-5xl justify-center items-center m-0 mx-auto flex-wrap'>     
         {languages.map((item, i) => (
           <Suspense fallback={<Loader/>}>
 
