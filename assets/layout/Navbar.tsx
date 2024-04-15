@@ -1,11 +1,15 @@
 import Link from 'next/link';
-import { useState } from 'react';
 import { GiHamburgerMenu } from "react-icons/gi";
-
+import { GrTechnology } from "react-icons/gr";
+import { RiContactsBookFill } from "react-icons/ri";
 type Props={
   hamburgerOpen: boolean;
   setHamburgerOpen: React.Dispatch<React.SetStateAction<boolean>> ;
 }
+
+import { GoProject } from "react-icons/go";
+import { IoLanguageSharp } from "react-icons/io5";
+
 
 function Navbar({hamburgerOpen, setHamburgerOpen}:Props) {
 
@@ -20,7 +24,12 @@ function Navbar({hamburgerOpen, setHamburgerOpen}:Props) {
   </div>
 
   <button onClick={handleHamburger} className='lg:hidden mx-6 cursor-pointer text-white' ><GiHamburgerMenu size={24}/></button>
-  <a className='sm:hidden lg:block mx-6 text-white' href='#techs'>Technologies</a>
+ <div className="lg:flex sm:hidden gap-6 mx-4 text-4xl">
+  <a className='text-white' href='#techs'><GrTechnology/></a>
+  <a className='text-white' href='#projects'><GoProject/></a>
+  <a className='text-white' href='#languages'><IoLanguageSharp/></a>
+  <a className='text-white' href='#contact'><RiContactsBookFill/></a>
+ </div>
 
 </div>
   )
