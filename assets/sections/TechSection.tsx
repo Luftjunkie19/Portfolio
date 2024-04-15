@@ -63,7 +63,7 @@ const languages: LanguageItem[]=[
         {languages.map((item, i) => (
           <Suspense fallback={<Loader/>}>
 
-          <motion.div variants={ballsVariants} animate initial={'notviewport'} whileInView={'inview'} viewport={{once:true}} className='lg:w-44 lg:h-44 sm:w-32 sm:h-32'>
+          <motion.div variants={ballsVariants} animate initial={'notviewport'} whileInView={'inview'} viewport={{once:true}} className='lg:w-44 lg:h-44 sm:w-24 sm:h-24'>
             <LanguageMesh backgroundColour={item.colour} techName={item.name} key={i} position={item.position} texturePath={item.path}/>
             <p className=" text-center text-white text-lg">{item.name}</p>
             </motion.div>

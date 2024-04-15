@@ -1,11 +1,12 @@
 import { useBoxProjectedEnv, useTexture } from '@react-three/drei'
 import { Canvas, useFrame } from '@react-three/fiber'
 import React, { useRef } from 'react'
+import { Mesh } from 'three';
 
 function DonutMesh() {
     const texture=useTexture('./textures/donut-texture.jpg');
 
-    const donutRef=useRef(null);
+    const donutRef=useRef<Mesh>(null);
   
     useFrame((state, delta)=>{
 if(donutRef.current){

@@ -10,6 +10,67 @@
     background: url('../assets/images/space.jpg') fixed no-repeat;
 }
 
+.techClass, .proClass, .langClass, .ctcClass{
+    -webkit-text-stroke:1px white;
+position: relative;
+top: 0;
+left: 0;
+}
+
+.techClass::after{
+    position: absolute;
+    content: 'Technologies';
+    top: 0;
+    left: 0;
+    color: rgb(39, 129, 255);
+    overflow: hidden;
+    width: 0px;
+    white-space: nowrap;
+}
+
+.proClass::after{
+    white-space: nowrap;
+    position: absolute;
+    content: 'Projects';
+    top: 0;
+    left: 0;
+    color: rgb(39, 129, 255);
+    width: 0px;
+    overflow: hidden;
+}
+
+.langClass::after{
+    position: absolute;
+    content: 'Languages';
+    top: 0;
+    overflow: hidden;
+    white-space: nowrap;
+    left: 0;
+    color: rgb(39, 129, 255);
+    width: 0px;
+}
+
+.ctcClass::after{
+    position: absolute;
+    content: 'Contact';
+    top: 0;
+    left: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    color: rgb(39, 129, 255);
+    width: 0px;
+}
+
+.techClass:hover::after, .ctcClass:hover::after, .proClass:hover::after, .langClass:hover::after{
+   animation: moveText 0.5s linear both;
+}
+
+@keyframes moveText {
+    to{
+        width: 100%;
+    }
+}
+
 @keyframes float {
     0% {
         transform: translateY(-20px);
