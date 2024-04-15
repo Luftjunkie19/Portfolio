@@ -15,11 +15,11 @@ function Layout({children}: Props) {
 
     return (<div className='min-h-screen w-screen'>
   
-        <Navbar hamburgerOpen={hamburgerState} setHamburgerOpen={setHamburger} />
 
         <Drawer closeHamburger={closeHamburger} hamburgerState={hamburgerState}/>
 
         <div className=" h-full w-full bg-bgColour">  
+        <Navbar hamburgerOpen={hamburgerState} setHamburgerOpen={setHamburger} />
 {children}
 </div>
 
