@@ -43,7 +43,7 @@ function Projects({}: Props) {
   }
 
   return (
-    <div className="flex gap-3 flex-col pl-2 my-6">
+    <div id='projects' className="flex gap-3 flex-col pl-2 my-6">
       <p className="text-3xl font-bold text-white">My Projects</p>
       <p className=" max-w-xl text-white">Through my entire journey with coding, I have built many great projects, that even haven't been stored on github, but here's the Top 3.</p>
 

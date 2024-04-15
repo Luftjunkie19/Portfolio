@@ -45,7 +45,7 @@ const socialMedia: ISocialMedia[] = [
 ]
 
   return (
-    <div className='flex sm:flex-col lg:flex-row gap-2 items-center justify-around  bg-blue-500/20'>
+    <div id='contact' className='flex sm:flex-col lg:flex-row gap-2 items-center justify-around  bg-blue-500/20'>
       <Suspense fallback={<Loader/>}>
        <motion.div variants={variants} initial='hidden' whileInView={'visible'} viewport={{once:true}} className="w-80 h-80">
         <DonutCanvas />

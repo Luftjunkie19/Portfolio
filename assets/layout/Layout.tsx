@@ -9,11 +9,15 @@ function Layout({children}: Props) {
 
   const [hamburgerState, setHamburger]=useState(false);
 
+  const closeHamburger=()=>{
+    setHamburger(false);
+  }
+
     return (<div className='min-h-screen w-screen'>
   
         <Navbar hamburgerOpen={hamburgerState} setHamburgerOpen={setHamburger} />
 
-        {hamburgerState && <Drawer hamburgerState={hamburgerState}/>}
+        <Drawer closeHamburger={closeHamburger} hamburgerState={hamburgerState}/>
 
         <div className=" h-full w-full bg-bgColour">  
 {children}
