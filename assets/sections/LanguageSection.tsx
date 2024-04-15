@@ -44,7 +44,7 @@ const languages: languageSection[] = [{
   path:'./textures/polish.jpg',
   name: 'Polish',
   proficiency: 'Native',
-  description: 'My mother tongue.',
+  description: 'My mother tongue. A language, which I broughtup with and is my first language basically.',
   progress:100
 },
  {path:'./textures/german.jpg', name:'German', 
@@ -67,7 +67,7 @@ description: `A language that I started really to learn 2 years ago, meaning tha
   return (
     <>
     <p id='languages' className=' text-2xl font-semibold text-white'>Languages, I know.</p>
-      <div className=' grid lg:grid-cols-2 gap-6 text-white'>
+      <div className=' grid xl:grid-cols-2 gap-6 text-white'>
         {languages.map((item:languageSection)=>(<div className="flex sm:flex-col lg:max-w-[90%] lg:flex-row gap-4 lg:items-center p-2">
             <Suspense fallback={<Loader/>}>
               <motion.div variants={variants} initial={'hidden'} whileInView={'visible'} viewport={{once:true}} className='w-48 h-48'>
