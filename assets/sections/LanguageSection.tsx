@@ -66,7 +66,7 @@ description: `A language that I started really to learn 2 years ago, meaning tha
 
   return (
     <>
-    <p className=' text-2xl font-semibold text-white'>Languages, I know.</p>
+    <p id='languages' className=' text-2xl font-semibold text-white'>Languages, I know.</p>
       <div className=' grid lg:grid-cols-2 gap-6 text-white'>
         {languages.map((item:languageSection)=>(<div className="flex sm:flex-col lg:max-w-[90%] lg:flex-row gap-4 lg:items-center p-2">
             <Suspense fallback={<Loader/>}>

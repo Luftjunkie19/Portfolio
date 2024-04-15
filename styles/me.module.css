@@ -5,9 +5,12 @@
 }
 
 
-
 .spaceBg{
     background: url('../assets/images/space.jpg') fixed no-repeat;
+}
+
+.transition{
+    transition: all 0.5s;
 }
 
 .techClass, .proClass, .langClass, .ctcClass{
