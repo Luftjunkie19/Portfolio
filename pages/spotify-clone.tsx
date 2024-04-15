@@ -66,7 +66,7 @@ function SpotifyDetail({}: Props) {
     <div className="flex sm:flex-col lg:flex-row lg:justify-around lg:items-center gap-6 py-8">
     <Carousel opts={{
       align: "start",
-    }} className='lg:w-64 lg:h-64 sm:w-52 sm:h-52 2xl:w-80 2xl:h-80'>
+    }} className='lg:w-64 self-center lg:h-64 sm:w-52 sm:h-52 2xl:w-80 2xl:h-80'>
       <CarouselContent>
         <CarouselItem>
           <Image className='lg:w-64 lg:h-64 sm:w-52 sm:h-52 2xl:w-80 2xl:h-80 object-cover rounded-lg'  src={spotifyImage} alt={''}/>
