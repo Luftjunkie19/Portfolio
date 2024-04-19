@@ -1,6 +1,8 @@
 import React from 'react';
 
 import Image from 'next/image';
+import Link from 'next/link';
+import { TbSourceCode } from 'react-icons/tb';
 
 import twitterImage from '@/assets/images/twitter1.png';
 import twitterImage2 from '@/assets/images/twitter2.png';
@@ -8,6 +10,7 @@ import twitterImage3 from '@/assets/images/twitter3.png';
 import twitterImage4 from '@/assets/images/twitter4.png';
 import MeshCanvas from '@/assets/meshes/LanguageMesh';
 import { LanguageItem } from '@/assets/sections/TechSection';
+import { Button } from '@/components/ui/button';
 import {
   Carousel,
   CarouselContent,
@@ -75,7 +78,17 @@ function TwitterDetail({}: Props) {
           Generally speaking, I am proud that I could build this project, because it was a milestone towards the next project which was Spotify Clone.
         </p>
 
-        <div className="flex flex-col gap-2">
+             <Link href={'https://github.com/Luftjunkie19/twitter-clone'}>
+          <Button className=" flex gap-4">
+     Source Code <TbSourceCode size={20}/>
+          </Button>
+          </Link>
+
+      
+      </div>
+
+      </div>
+  <div className="flex flex-col gap-2 px-2 text-white">
           <p className='text-2xl font-bold'>Technologies used</p>
           <div className="flex flex-wrap gap-4">
 
@@ -84,9 +97,6 @@ function TwitterDetail({}: Props) {
           </div>))}
           </div>
         </div>
-      </div>
-
-      </div>
     </div>
   )
 }

@@ -76,7 +76,12 @@ function DetailPage({}: Props) {
     Although BookFreak is a project that has been in development for a long time, it is still in its early stages and promise it will be only better in case of UI and functionalities.
   </p>
 
-  <p className='sm:text-xl 2xl:text-2xl font-semibold'>Used Technologies</p>
+  
+</div>
+
+      </div>
+ <div className="flex flex-col gap-2 px-2 text-white">
+<p className='sm:text-xl 2xl:text-2xl font-semibold'>Used Technologies</p>
 <div className="flex gap-4 sm:flex-wrap xl:flex-nowrap">
   {usedTechs.map((item:LanguageItem, i:any)=>(<Suspense fallback={<Loader/>}>
     <div className=' sm:w-24 sm:h-24 2xl:w-36 2xl:h-36'>
@@ -85,7 +90,6 @@ function DetailPage({}: Props) {
   </Suspense>))}
 </div>
 </div>
-      </div>
 
 <div className="flex flex-col gap-4 p-2 text-white">
   <p className=' text-2xl font-bold'>Description</p>
