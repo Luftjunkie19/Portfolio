@@ -1,10 +1,15 @@
 import React, { Suspense } from 'react';
 
+import { motion } from 'framer-motion';
 import Image from 'next/image';
-
+import Link from 'next/link';
+import { FaMobile } from 'react-icons/fa';
+import { MdOutlineWeb } from 'react-icons/md';
+import { TypewriterEffect } from '@/components/ui/typewriter';
 import Loader from '@/assets/Loader';
 import MeshCanvas from '@/assets/meshes/LanguageMesh';
 import { LanguageItem } from '@/assets/sections/TechSection';
+import { Button } from '@/components/ui/button';
 import {
   Carousel,
   CarouselContent,
@@ -22,32 +27,96 @@ import bookSc4 from '../../assets/images/BookFreakSc4.png';
 type Props = {}
 
 function DetailPage({}: Props) {
- const usedTechs:LanguageItem[]=[{
-   path: './textures/react.png', 
-   name: "React",
-   position: [0, 0, 0],
-   colour:'#1f1f1f'
- }, {
-   name: '',
-   path: './textures/redux.png',
-   position: [0,0,0],
-   colour:'#b8b4b4'
- }, 
- {
-  name: '',
-  path: './textures/tailwind.png',
-  position: [0,0,0],
-  colour:'#363434'
-}, {
-  name: '',
-  path: './textures/firebase.png',
-  position: [0,0,0],
-  colour:'orange'
-}]
+  const usedTechs: LanguageItem[] = [{
+    path: './textures/react.png',
+    name: "React",
+    position: [0, 0, 0],
+    colour: '#1f1f1f'
+  }, {
+    name: '',
+    path: './textures/redux.png',
+    position: [0, 0, 0],
+    colour: '#b8b4b4'
+  },
+  {
+    name: '',
+    path: './textures/tailwind.png',
+    position: [0, 0, 0],
+    colour: '#363434'
+  }, {
+    name: '',
+    path: './textures/firebase.png',
+    position: [0, 0, 0],
+    colour: 'orange'
+    }];
+  
+  const variants= {
+    hidden: {
+      x: -100,
+      y:100,
+    scale:0,
+    opacity:0,
+    transition:{
+      duration:0.7,
+      type:"spring",
+      bounce:0.5
+    }
+  },
+    visible: {
+         x: 0,
+      y:0,
+    scale:1,
+    opacity:1,
+    transition:{
+      duration:0.7,
+      type:"spring",
+      bounce:0.5
+    }
+  }
+}
+
+const buttonsVariants={
+   hidden: {
+      x: -100,
+      y:0,
+    scale:0,
+    opacity:0,
+    transition:{
+      when:"afterChildren",
+   staggerChildren: 0.3,
+        delayChildren: 0.3,
+      duration:0.7,
+      type:"spring",
+      bounce:0.5
+    }
+  },
+    visible: {
+         x: 0,
+      y:0,
+    scale:1,
+    opacity:1,
+    transition:{
+       staggerChildren: 0.3,
+        delayChildren: 0.3,
+       when: "beforeChildren",
+      duration:0.7,
+      type:"spring",
+      bounce:0.5
+    }
+  }
+  }
+  
+  const item = {
+  hidden: { opacity: 0, scale:0 },
+  show: { opacity: 1, scale:1 }
+}
+
+
+  
   return (
     <div className=" min-h-screen">
       <div className="flex sm:flex-col lg:flex-row lg:justify-around lg:items-center gap-6 py-8">
-      <Carousel   opts={{
+      <Carousel opts={{
         align: "start",
       }} className='lg:w-64 lg:h-64 sm:w-52 sm:h-52 2xl:w-80 2xl:h-80 self-center'>
         <CarouselContent>
@@ -67,21 +136,32 @@ function DetailPage({}: Props) {
             <Image className='lg:w-64 lg:h-64 sm:w-52 sm:h-52 2xl:w-80 2xl:h-80 object-cover rounded-lg'  src={bookSc4} alt={''}/>
           </CarouselItem>
         </CarouselContent>
-        <CarouselPrevious/>
-        <CarouselNext/>
+        <CarouselPrevious className="sm:flex lg:hidden xl:flex"/>
+        <CarouselNext className="sm:flex lg:hidden xl:flex"/>
       </Carousel>
-<div className="flex flex-col gap-2 max-w-xl lg:max-w-sm 2xl:max-w-2xl text-white">
-  <p className='text-3xl font-bold'>BookFreak</p>
-  <p className='sm:text-sm 2xl:text-lg'>BookFreak is an unique project, which has been a lot of time devoted on. BookFreak's goal is to enable readers and users to freely discuss their opinions about a book, track their reading progress, but also the most read book's category.
+<div className="flex flex-col gap-2 max-w-xl lg:max-w-sm 2xl:max-w-2xl text-white sm:px-1 lg:px-0">
+  <motion.p variants={variants} initial="hidden" whileInView={'visible'} viewport={{once:true}} className='text-3xl font-bold'>BookFreak</motion.p>
+  <motion.p variants={variants} initial="hidden" whileInView={'visible'} viewport={{once:true}} className='sm:text-base 2xl:text-lg'>BookFreak is an unique project, which has been a lot of time devoted on. BookFreak's goal is to enable readers and users to freely discuss their opinions about a book, track their reading progress, but also the most read book's category.
     Although BookFreak is a project that has been in development for a long time, it is still in its early stages and promise it will be only better in case of UI and functionalities.
-  </p>
+  </motion.p>
 
+          <motion.div viewport={{once:true}} initial='hidden' whileInView={'visible'} variants={buttonsVariants} className="flex gap-2 sm:justify-center md:justify-start"> 
+            <Link  href={'https://github.com/Luftjunkie19/bookfreak-project'}>
+            <Button className='flex gap-2 items-center'>Web Code <MdOutlineWeb size={24}/></Button>
+            </Link>
+
+             <Link  href={'https://github.com/Luftjunkie19/bookfreak-mobile'}>
+            <Button className='flex gap-2 items-center'>Mobile Code <FaMobile size={24}/></Button>
+            </Link>
+</motion.div>
   
 </div>
 
       </div>
  <div className="flex flex-col gap-2 px-2 text-white">
-<p className='sm:text-xl 2xl:text-2xl font-semibold'>Used Technologies</p>
+   <motion.div variants={variants} initial="hidden" whileInView={'visible'} viewport={{once:true}} className='self-start'>
+          <TypewriterEffect words={[{text:"Technologies", className:"text-white text-xl font-semibold"}, {text:"used", className:"text-white font-semibold text-xl"}]}/>
+        </motion.div>
 <div className="flex gap-4 sm:flex-wrap xl:flex-nowrap">
   {usedTechs.map((item:LanguageItem, i:any)=>(<Suspense key={i} fallback={<Loader/>}>
     <div className=' sm:w-24 sm:h-24 2xl:w-36 2xl:h-36'>
@@ -92,8 +172,8 @@ function DetailPage({}: Props) {
 </div>
 
 <div className="flex flex-col gap-4 p-2 text-white">
-  <p className=' text-2xl font-bold'>Description</p>
-      <div className="flex gap-2 flex-wrap">
+  <motion.p variants={variants} initial="hidden" whileInView={'visible'} viewport={{once:true}} className=' text-2xl font-bold'>Description</motion.p>
+      <motion.div viewport={{once:true}} initial='hidden' whileInView={'visible'} variants={buttonsVariants} className="flex gap-2 flex-wrap">
         <div className="max-w-xl flex flex-col gap-2">
       <p className='font-bold text-2xl'>
   Why is BookFreak an unique project for me?
@@ -108,7 +188,7 @@ function DetailPage({}: Props) {
         </div>
 
 
-      </div>
+      </motion.div>
 </div>
       
     </div>

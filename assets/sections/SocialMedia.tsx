@@ -59,14 +59,14 @@ const socialMedia: ISocialMedia[] = [
 {socialMedia.map((item:ISocialMedia, i:any)=>(
    <Suspense key={i} fallback={<Loader/>}>
 <Link className=' w-24 h-24'  key={i} href={item.link}>
-  <motion.div key={i} variants={variants} initial='hidden' whileInView={'visible'} viewport={{once:true}} className="w-full h-full">
+  <div key={i} className="w-full h-full">
      
       
     <MeshCanvas backgroundColour={item.colour} texturePath={item.logo} position={[0, 0, 0]} techName={''}/>
       
 
     
-  </motion.div>
+  </div>
     </Link>    
    </Suspense>
 ))}

@@ -56,12 +56,11 @@ const languages: LanguageItem[]=[
     <motion.div variants={variants} whileInView={'inview'} initial={'notviewport'} id='techs' className='p-2'>
       <TypewriterEffect words={[{text:'The', className:'text-2xl text-white font-semibold' }, {text:'Most', className:'text-2xl text-white font-semibold'}, {text:'Essential', className:'text-2xl text-white font-semibold'},{text:"Technologies", className:'text-2xl text-white font-semibold'}, {text:'I', className:'text-2xl text-white font-semibold'}, {text:'have', className:'text-2xl text-white font-semibold'}, {text:'learned.', className:'text-2xl text-white font-semibold'}]}/>
       
-      <div className='flex lg:p-6 sm:p-3 sm:gap-8  lg:gap-3 max-w-5xl justify-center items-center m-0 mx-auto lg:flex-nowrap  sm:flex-wrap'>     
+      <div className='flex lg:p-6 sm:p-3 sm:gap-8  lg:gap-3 max-w-5xl justify-center items-center m-0 mx-auto xl:flex-nowrap  sm:flex-wrap'>     
         {languages.map((item, i) => (
           <Suspense key={i} fallback={<Loader/>}>
-          <Suspense key={i} fallback={<Loader/>}>
 
-          <motion.div key={i} variants={ballsVariants} animate initial={'notviewport'} whileInView={'inview'} viewport={{once:true}} className='lg:w-44 lg:h-44 sm:w-24 sm:h-24'>
+          <div key={i}  className='lg:w-44 lg:h-44 sm:w-24 sm:h-24'>
             <LanguageMesh backgroundColour={item.colour} techName={item.name} key={i} position={item.position} texturePath={item.path}/>
             <p className=" text-center text-white text-lg">{item.name}</p>
             </div>

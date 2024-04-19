@@ -40,7 +40,7 @@ function HeroSection() {
   return (
     <div className={`${classes.spaceBg}`}>
 
-      <div className={`flex lg:h-[50vh] xl:h-[80vh] sm:flex-col-reverse lg:flex-row py-4 gap-8 lg:max-w-7xl lg:items-center px-2 sm:jutify-center lg:justify-around 2xl:justify-between lg:my-0 lg:mx-auto`}>
+      <div className={`flex lg:h-[70vh] xl:h-[80vh] sm:flex-col-reverse lg:flex-row py-4 gap-8 lg:max-w-7xl lg:items-center px-2 sm:jutify-center lg:justify-around 2xl:justify-between lg:my-0 lg:mx-auto`}>
           <motion.div variants={variants} initial={'outview'} whileInView={'inview'} viewport={{once:true}} animate className="flex flex-col gap-6 max-w-xl lg:w-1/2 text-white">
               <p className="text-4xl font-bold">Hello, I am <Typewriter loop typeSpeed={200} words={['Fullstack Developer', 'Programming Enthusiast', 'Development Enthusiast']}/></p>
             <p className="text-xl">19-year old fullstack developer, passioned about programming, technologies and self improvement. Since July 2022 as I started my 

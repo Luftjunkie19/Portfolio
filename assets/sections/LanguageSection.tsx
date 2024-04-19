@@ -40,6 +40,20 @@ const variants= {
   }
 }
 
+const numberGrowth = (endNumber: number) => {
+  let number = 0;
+
+  const interval = setInterval(() => {
+    if (number < endNumber) {
+      number++;
+    } else {
+      clearInterval(interval);
+    }
+  }, 100);
+
+  return number;
+}
+
 const languages: languageSection[] = [{
   path:'./textures/polish.jpg',
   name: 'Polish',
@@ -70,7 +84,7 @@ description: `A language that I started really to learn 2 years ago, meaning tha
       <div className=' grid xl:grid-cols-2 gap-6 text-white'>
         {languages.map((item:languageSection, i)=>(<div key={i} className="flex sm:flex-col lg:max-w-[90%] lg:flex-row gap-4 lg:items-center p-2">
             <Suspense key={i} fallback={<Loader/>}>
-              <motion.div key={i} variants={variants} initial={'hidden'} whileInView={'visible'} viewport={{once:true}} className='w-48 h-48'>
+              <div key={i} className='w-48 h-48'>
                   <SphereMesh texturePath={item.path} position={[0,0,0]} techName={item.name}/>
               </div>
             </Suspense>
