@@ -78,7 +78,7 @@ function DetailPage({}: Props) {
 
   <p className='sm:text-xl 2xl:text-2xl font-semibold'>Used Technologies</p>
 <div className="flex gap-4 sm:flex-wrap xl:flex-nowrap">
-  {usedTechs.map((item:LanguageItem, i:any)=>(<Suspense fallback={<Loader/>}>
+  {usedTechs.map((item:LanguageItem, i:any)=>(<Suspense key={i} fallback={<Loader/>}>
     <div className=' sm:w-24 sm:h-24 2xl:w-36 2xl:h-36'>
       <MeshCanvas backgroundColour={item.colour} texturePath={item.path} position={item.position} techName={item.name}/>
     </div>
