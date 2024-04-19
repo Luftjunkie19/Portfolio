@@ -23,6 +23,7 @@
     "@react-three/drei": "^9.105.2",
     "@react-three/fiber": "^8.16.1",
     "@react-three/postprocessing": "^2.16.2",
+    "@studio-freight/lenis": "^1.0.42",
     "@types/three": "^0.163.0",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.0",

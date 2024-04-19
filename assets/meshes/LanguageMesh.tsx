@@ -26,7 +26,6 @@ function LanguageMesh({texturePath, position, techName, backgroundColour}: Props
 const scroll=useScroll();
 const meshRef=useRef<Mesh>(null);
 
-
   return (
 
          <Float floatIntensity={1.25} speed={1.75} rotationIntensity={0.6}>
@@ -41,7 +40,6 @@ const meshRef=useRef<Mesh>(null);
 
 
 </Float>
-
   );
 }
 
@@ -52,10 +50,6 @@ function MeshCanvas({texturePath, position, techName, backgroundColour}:Props) {
     <LanguageMesh backgroundColour={backgroundColour} position={position} texturePath={texturePath} techName={techName} />
 
 
-
-    {/* <Text3D position={[-1, -2, 2]} scale={0.25} font={'./fonts/RobotoRegular.json'}>
-      {techName}
-    </Text3D> */}
 
   </Canvas>)
 }

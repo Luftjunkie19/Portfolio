@@ -56,9 +56,6 @@ function LanguageCanvas({texturePath, position, techName}:Props) {
     
     <SphereMesh position={position} texturePath={texturePath} techName={techName} />
 
-    {/* <Text3D position={[-1, -2, 2]} scale={0.25} font={'./fonts/RobotoRegular.json'}>
-      {techName}
-    </Text3D> */}
 
   </Canvas>)
 }
