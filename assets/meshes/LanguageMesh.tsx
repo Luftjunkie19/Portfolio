@@ -10,6 +10,8 @@ import {
   ScrollControls,
   useScroll,
   useTexture,
+  View,
+  
 } from '@react-three/drei';
 import {
   Canvas,
@@ -26,43 +28,33 @@ type Props = {
 
 function LanguageMesh({texturePath, position, techName, backgroundColour}: Props) {
   const texture = useTexture(texturePath);
-const scroll=useScroll();
 const meshRef=useRef<Mesh>(null);
 
-
   return (
-    <Scroll>
+
          <Float floatIntensity={1.25} speed={1.75} rotationIntensity={0.6}>
 
 <mesh ref={meshRef} castShadow receiveShadow scale={2.25}>
 
   <sphereGeometry  />
   <meshStandardMaterial polygonOffset polygonOffsetFactor={-5} flatShading color={backgroundColour ? backgroundColour : 'lightblue'}/>
-<Decal rotation={[2 * Math.PI, 0, 6.25]} position={[0, 0, 1]} map={texture} scale={0.9} />
+<Decal  rotation={[2 * Math.PI, 0, 6.25]} position={[0, 0, 1]} map={texture} scale={0.9} />
 </mesh>
 
 
 
 </Float>
-    </Scroll>
   );
 }
 
 function MeshCanvas({texturePath, position, techName, backgroundColour}:Props) {
-  return (<Canvas frameloop='demand' gl={{preserveDrawingBuffer:true}} >
+  return (<Canvas frameloop='demand' gl={{preserveDrawingBuffer:true}}>
     <OrbitControls enableZoom={false} />
     <ambientLight />
     <directionalLight />
     
-    <ScrollControls style={{overflowY:'hidden'}}>
-
     <LanguageMesh backgroundColour={backgroundColour} position={position} texturePath={texturePath} techName={techName} />
-    </ScrollControls>
 
-
-    {/* <Text3D position={[-1, -2, 2]} scale={0.25} font={'./fonts/RobotoRegular.json'}>
-      {techName}
-    </Text3D> */}
 
   </Canvas>)
 }

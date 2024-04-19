@@ -18,7 +18,7 @@ function Navbar({hamburgerOpen, setHamburgerOpen}:Props) {
   }
 
   return (
-<div className="navbar sticky top-0 left-0 z-50 bg-darkBlue">
+<div className="navbar fixed top-0 left-0 z-50 bg-black/20">
   <div className="flex-1">
     <a className="btn text-white btn-ghost text-xl">Luftjunkie_19</a>
   </div>
