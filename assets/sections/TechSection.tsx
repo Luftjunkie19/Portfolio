@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 
 import Loader from '../Loader';
 import LanguageMesh from '../meshes/LanguageMesh';
-import { TypewriterEffectSmooth } from '@/components/ui/typewriter';
+import { TypewriterEffect, TypewriterEffectSmooth } from '@/components/ui/typewriter';
 
 type Props = {}
 
@@ -53,7 +53,7 @@ const languages: LanguageItem[]=[
 
   return (
     <motion.div variants={variants} whileInView={'inview'} initial={'notviewport'} id='techs' className='p-2'>
-      <TypewriterEffectSmooth words={[{text:'The', className:'text-2xl text-white font-semibold' }, {text:'Most', className:'text-2xl text-white font-semibold'}, {text:'Essential', className:'text-2xl text-white font-semibold'},{text:"Technologies", className:'text-2xl text-white font-semibold'}, {text:'I', className:'text-2xl text-white font-semibold'}, {text:'have', className:'text-2xl text-white font-semibold'}, {text:'learned.', className:'text-2xl text-white font-semibold'}]}/>
+      <TypewriterEffect words={[{text:'The', className:'text-2xl text-white font-semibold' }, {text:'Most', className:'text-2xl text-white font-semibold'}, {text:'Essential', className:'text-2xl text-white font-semibold'},{text:"Technologies", className:'text-2xl text-white font-semibold'}, {text:'I', className:'text-2xl text-white font-semibold'}, {text:'have', className:'text-2xl text-white font-semibold'}, {text:'learned.', className:'text-2xl text-white font-semibold'}]}/>
       
       <div className='flex lg:p-6 sm:p-3 sm:gap-8  lg:gap-3 max-w-5xl justify-center items-center m-0 mx-auto lg:flex-nowrap  sm:flex-wrap'>     
         {languages.map((item, i) => (
