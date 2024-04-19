@@ -79,7 +79,7 @@ function TwitterDetail({}: Props) {
           <p className='text-2xl font-bold'>Technologies used</p>
           <div className="flex flex-wrap gap-4">
 
-          {technologiesArray.map((item:LanguageItem, i:any)=>(<div className='sm:w-24 sm:h-24 xl:h-32 xl:w-32'>
+          {technologiesArray.map((item:LanguageItem, i:any)=>(<div key={i} className='sm:w-24 sm:h-24 xl:h-32 xl:w-32'>
           <MeshCanvas backgroundColour={item.colour} position={item.position} techName={item.name} texturePath={item.path}/>
           </div>))}
           </div>
