@@ -57,11 +57,11 @@ const socialMedia: ISocialMedia[] = [
         <p className='text-white'>In case you would Like to reach me, click one of the balls below.</p>
         <div className="flex gap-2 self-center">
 {socialMedia.map((item:ISocialMedia, i:any)=>(
-   <Suspense fallback={<Loader/>}>
+   <Suspense key={i} fallback={<Loader/>}>
 <Link className=' w-24 h-24' href={item.link}>
-  <motion.div variants={variants} initial='hidden' whileInView={'visible'} viewport={{once:true}} className="w-full h-full">
+  <div className="w-full h-full">
     <MeshCanvas backgroundColour={item.colour} texturePath={item.logo} position={[0, 0, 0]} techName={''}/>
-  </motion.div>
+  </div>
     </Link>    
    </Suspense>
 ))}

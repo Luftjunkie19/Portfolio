@@ -7,8 +7,10 @@ import {
   Float,
   OrbitControls,
   useTexture,
+  View,
 } from '@react-three/drei';
 import {
+  addEffect,
   Canvas,
   useFrame,
 } from '@react-three/fiber';
@@ -20,7 +22,15 @@ type Props = {
 
 };
 
+import Lenis from '@studio-freight/lenis'
+
+
+
 function SphereMesh({texturePath, position, techName}: Props) {
+  // Use lenis smooth scroll
+const lenis = new Lenis({ syncTouch: true })
+// Integrate into fibers own raf loop instead of opening another
+addEffect((t) => lenis.raf(t));
   const texture = useTexture(texturePath);
   const meshRef=useRef<Mesh>(null);
 
@@ -50,16 +60,12 @@ if(meshRef.current){
 }
 
 function LanguageCanvas({texturePath, position, techName}:Props) {
-  return (<Canvas frameloop='demand' gl={{preserveDrawingBuffer:true}} >
+  return (<Canvas frameloop='demand' gl={{preserveDrawingBuffer:true}}>
     <OrbitControls enableZoom={false} />
     <ambientLight />
-    <directionalLight />
     
     <SphereMesh position={position} texturePath={texturePath} techName={techName} />
 
-    {/* <Text3D position={[-1, -2, 2]} scale={0.25} font={'./fonts/RobotoRegular.json'}>
-      {techName}
-    </Text3D> */}
 
   </Canvas>)
 }
