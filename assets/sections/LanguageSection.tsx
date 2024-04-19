@@ -72,7 +72,7 @@ description: `A language that I started really to learn 2 years ago, meaning tha
             <Suspense key={i} fallback={<Loader/>}>
               <motion.div key={i} variants={variants} initial={'hidden'} whileInView={'visible'} viewport={{once:true}} className='w-48 h-48'>
                   <SphereMesh texturePath={item.path} position={[0,0,0]} techName={item.name}/>
-              </motion.div>
+              </div>
             </Suspense>
 
               <motion.div variants={variants} initial={'hidden'} whileInView={'visible'} viewport={{once:true}} className="flex flex-col gap-2 max-w-md">

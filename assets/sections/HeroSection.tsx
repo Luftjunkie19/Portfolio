@@ -47,12 +47,14 @@ function HeroSection() {
               journey in the world of programming, I have been learning and improving my skills. And I think we can make projects out of space.
             </p>
           </motion.div>
-          <motion.div variants={variants} initial={'outview'} whileInView={'inview'} viewport={{once:true}} animate className={`w-80 h-80 sm:self-center  relative top-0 left-0`}>
+          <div className={`w-80 h-80 sm:self-center  relative top-0 left-0`}>
             <Suspense  fallback={<Loader/>}>
           <Scene/>
+  
 <Image width={264} height={264} className={`w-52 -translate-y-1/2 -translate-x-1/2 absolute h-52 top-1/4 left-1/4 object-cover object-top ${classes.meBg}`} src={image} alt=''/>
+
             </Suspense>
-          </motion.div>
+          </div>
     </div>
     </div>
   )

@@ -2,6 +2,8 @@ import React, { Suspense } from 'react';
 
 import { motion } from 'framer-motion';
 
+import { TypewriterEffect } from '@/components/ui/typewriter';
+
 import Loader from '../Loader';
 import LanguageMesh from '../meshes/LanguageMesh';
 
@@ -15,7 +17,7 @@ export interface LanguageItem{
 }
 function TechSection({}: Props) {
 
-  const ballsVariants={
+  const variants={
     notviewport:{
       opacity:0,
       y:100,
@@ -40,38 +42,34 @@ function TechSection({}: Props) {
 
 const languages: LanguageItem[]=[
 {name:'React (Native)', path:'./textures/react.png', position:[-2, 0, 1], colour:'#232424' }, 
-{name:'HTML', path:'./textures/html.png', position:[0, 0, 1], colour:'white'}, 
-{name:'CSS', path:'./textures/css.png', position:[2, 0, 1], colour:'#2965f1' },
 {name:'Git', path:'./textures/git.png', position:[4, 0, 1], colour:'darkgray' },
-{name:"JavaScript", path:'./textures/JavaScript.png', position:[-4, 0, 1], colour:'#f0db4f'},
 {name:"NextJS", path:'./textures/next.png', position:[-4, -1.5, 1], colour:'white'},
 {name:"NodeJS", path:'./textures/Node.png', position:[-2, -1.5, 1], colour:'#46484a'},
 {name:"TypeScript", path:'./textures/typescript.png', position:[0, -1.5, 1], colour:'#358EF1'},
 {name:"Firebase", path:'./textures/firebase.png', position:[2, -1.5, 1], colour:'orange'},
-{name:"MongoDB", path:'./textures/mongo.png', position:[4, -1.5, 1], colour:'#46484a'},
-{name:'Tailwindcss', path:'./textures/tailwind.png', position:[6,-0.75, 1], colour:'#a5f3fc' },
-  { name: 'Redux', path: './textures/redux.png', position:[6,-0.75, 1], colour:'#232424' }
 ]
 
 
 
 
   return (
-    <div id='techs' className='h-fit p-2'>
-        <p className=' text-3xl text-white font-semibold'>Technologies, I have learned</p>
-      <div className='flex lg:p-6 sm:p-3 sm:gap-8  lg:gap-3 max-w-5xl justify-center items-center m-0 mx-auto flex-wrap'>     
+    <motion.div variants={variants} whileInView={'inview'} initial={'notviewport'} id='techs' className='p-2'>
+      <TypewriterEffect words={[{text:'The', className:'text-2xl text-white font-semibold' }, {text:'Most', className:'text-2xl text-white font-semibold'}, {text:'Essential', className:'text-2xl text-white font-semibold'},{text:"Technologies", className:'text-2xl text-white font-semibold'}, {text:'I', className:'text-2xl text-white font-semibold'}, {text:'have', className:'text-2xl text-white font-semibold'}, {text:'learned.', className:'text-2xl text-white font-semibold'}]}/>
+      
+      <div className='flex lg:p-6 sm:p-3 sm:gap-8  lg:gap-3 max-w-5xl justify-center items-center m-0 mx-auto lg:flex-nowrap  sm:flex-wrap'>     
         {languages.map((item, i) => (
+          <Suspense key={i} fallback={<Loader/>}>
           <Suspense key={i} fallback={<Loader/>}>
 
           <motion.div key={i} variants={ballsVariants} animate initial={'notviewport'} whileInView={'inview'} viewport={{once:true}} className='lg:w-44 lg:h-44 sm:w-24 sm:h-24'>
             <LanguageMesh backgroundColour={item.colour} techName={item.name} key={i} position={item.position} texturePath={item.path}/>
             <p className=" text-center text-white text-lg">{item.name}</p>
-            </motion.div>
+            </div>
           </Suspense>
           ))}
     </div>
     
-    </div>
+    </motion.div>
   )
 }
 
