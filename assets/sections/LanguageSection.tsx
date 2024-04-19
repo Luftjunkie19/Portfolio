@@ -68,9 +68,9 @@ description: `A language that I started really to learn 2 years ago, meaning tha
     <>
     <p id='languages' className=' text-2xl font-semibold text-white'>Languages, I know.</p>
       <div className=' grid xl:grid-cols-2 gap-6 text-white'>
-        {languages.map((item:languageSection)=>(<div className="flex sm:flex-col lg:max-w-[90%] lg:flex-row gap-4 lg:items-center p-2">
-            <Suspense fallback={<Loader/>}>
-              <motion.div variants={variants} initial={'hidden'} whileInView={'visible'} viewport={{once:true}} className='w-48 h-48'>
+        {languages.map((item:languageSection, i)=>(<div key={i} className="flex sm:flex-col lg:max-w-[90%] lg:flex-row gap-4 lg:items-center p-2">
+            <Suspense key={i} fallback={<Loader/>}>
+              <motion.div key={i} variants={variants} initial={'hidden'} whileInView={'visible'} viewport={{once:true}} className='w-48 h-48'>
                   <SphereMesh texturePath={item.path} position={[0,0,0]} techName={item.name}/>
               </motion.div>
             </Suspense>

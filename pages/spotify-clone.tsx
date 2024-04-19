@@ -1,6 +1,8 @@
 import React from 'react';
 
 import Image from 'next/image';
+import Link from 'next/link';
+import { TbSourceCode } from 'react-icons/tb';
 
 import spotifyImage from '@/assets/images/spotify.png';
 import spotifyImage2 from '@/assets/images/spotify2.png';
@@ -9,6 +11,7 @@ import spotifyImage4 from '@/assets/images/spotify4.png';
 import spotifyImage5 from '@/assets/images/spotify5.png';
 import MeshCanvas from '@/assets/meshes/LanguageMesh';
 import { LanguageItem } from '@/assets/sections/TechSection';
+import { Button } from '@/components/ui/button';
 import {
   Carousel,
   CarouselContent,
@@ -90,10 +93,17 @@ function SpotifyDetail({}: Props) {
     <div className="flex flex-col gap-2 max-w-xl lg:max-w-sm 2xl:max-w-2xl text-white">
       <p className=' text-3xl font-bold'>Spotify Clone</p>
       <p className='sm:text-sm 2xl:text-lg'>This Project is a clone of the Spotify website. It is a full stack application that uses NextJs as a main framework, and TailwindCSS for styling and MongoDB as database. But to the project is also attached the stripe payment system, so that the user can pay for the premium subscription.</p>
-      <p>
-      </p>
+    
+     <Link href={'https://github.com/Luftjunkie19/spotify-cloen'}>
+          <Button className=" flex gap-4">
+     Source Code <TbSourceCode size={20}/>
+          </Button>
+          </Link>
+          
+    </div>
 
-      <div className="flex flex-col gap-2">
+    </div>
+      <div className="flex flex-col gap-2 px-2 text-white">
         <p className='text-2xl font-bold'>Technologies used</p>
         <div className="flex flex-wrap gap-4">
 
@@ -102,9 +112,6 @@ function SpotifyDetail({}: Props) {
         </div>))}
         </div>
       </div>
-    </div>
-
-    </div>
   </div>
   )
 }

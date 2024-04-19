@@ -1,16 +1,17 @@
 import React, { useRef } from 'react';
 
+import * as THREE from 'three';
 import { Mesh } from 'three';
 
 import {
   Decal,
   Float,
   OrbitControls,
-  useTexture,
 } from '@react-three/drei';
 import {
   Canvas,
   useFrame,
+  useLoader,
 } from '@react-three/fiber';
 
 type Props = {
@@ -21,7 +22,7 @@ type Props = {
 };
 
 function SphereMesh({texturePath, position, techName}: Props) {
-  const texture = useTexture(texturePath);
+  const texture = useLoader(THREE.TextureLoader, texturePath);
   const meshRef=useRef<Mesh>(null);
 
   useFrame(()=>{
@@ -37,8 +38,7 @@ if(meshRef.current){
       
         <sphereGeometry  />
         <meshBasicMaterial  polygonOffset polygonOffsetFactor={-5}  />
-      <Decal position={[0, 0, 1]} scale={2} map={texture}/>
-    <Decal position={[0, 0, 0]} scale={2} map={texture}/>
+    <Decal dispose={null}  position={[0, 0, 0]} scale={2} map={texture}/>
           </mesh>
       
       
@@ -51,9 +51,8 @@ if(meshRef.current){
 
 function LanguageCanvas({texturePath, position, techName}:Props) {
   return (<Canvas frameloop='demand' gl={{preserveDrawingBuffer:true}} >
+      <ambientLight />
     <OrbitControls enableZoom={false} />
-    <ambientLight />
-    <directionalLight />
     
     <SphereMesh position={position} texturePath={texturePath} techName={techName} />
 

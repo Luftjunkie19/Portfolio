@@ -61,9 +61,9 @@ const languages: LanguageItem[]=[
         <p className=' text-3xl text-white font-semibold'>Technologies, I have learned</p>
       <div className='flex lg:p-6 sm:p-3 sm:gap-8  lg:gap-3 max-w-5xl justify-center items-center m-0 mx-auto flex-wrap'>     
         {languages.map((item, i) => (
-          <Suspense fallback={<Loader/>}>
+          <Suspense key={i} fallback={<Loader/>}>
 
-          <motion.div variants={ballsVariants} animate initial={'notviewport'} whileInView={'inview'} viewport={{once:true}} className='lg:w-44 lg:h-44 sm:w-24 sm:h-24'>
+          <motion.div key={i} variants={ballsVariants} animate initial={'notviewport'} whileInView={'inview'} viewport={{once:true}} className='lg:w-44 lg:h-44 sm:w-24 sm:h-24'>
             <LanguageMesh backgroundColour={item.colour} techName={item.name} key={i} position={item.position} texturePath={item.path}/>
             <p className=" text-center text-white text-lg">{item.name}</p>
             </motion.div>
