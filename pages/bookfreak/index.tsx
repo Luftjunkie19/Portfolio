@@ -1,12 +1,11 @@
-import React, { Suspense } from 'react';
+import React from 'react';
 
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
 import { FaMobile } from 'react-icons/fa';
 import { MdOutlineWeb } from 'react-icons/md';
-import { TypewriterEffect } from '@/components/ui/typewriter';
-import Loader from '@/assets/Loader';
+
 import MeshCanvas from '@/assets/meshes/LanguageMesh';
 import { LanguageItem } from '@/assets/sections/TechSection';
 import { Button } from '@/components/ui/button';
@@ -105,6 +104,8 @@ const buttonsVariants={
     }
   }
   }
+ 
+
   
   const item = {
   hidden: { opacity: 0, scale:0 },
@@ -158,18 +159,16 @@ const buttonsVariants={
 </div>
 
       </div>
- <div className="flex flex-col gap-2 px-2 text-white">
-   <motion.div variants={variants} initial="hidden" whileInView={'visible'} viewport={{once:true}} className='self-start'>
-          <TypewriterEffect words={[{text:"Technologies", className:"text-white text-xl font-semibold"}, {text:"used", className:"text-white font-semibold text-xl"}]}/>
-        </motion.div>
-<div className="flex gap-4 sm:flex-wrap xl:flex-nowrap">
-  {usedTechs.map((item:LanguageItem, i:any)=>(<Suspense key={i} fallback={<Loader/>}>
-    <div className=' sm:w-24 sm:h-24 2xl:w-36 2xl:h-36'>
-      <MeshCanvas backgroundColour={item.colour} texturePath={item.path} position={item.position} techName={item.name}/>
-    </div>
-  </Suspense>))}
-</div>
-</div>
+  <div className="flex flex-col gap-2 px-2 text-white">
+                     <p className="text-2xl font-semibold">
+          Technologies used
+        </p>
+          <div  className="flex flex-wrap gap-4">
+          {usedTechs.map((item:LanguageItem, i:any)=>(<div key={i} className='sm:w-24 sm:h-24 xl:h-32 xl:w-32'>
+          <MeshCanvas backgroundColour={item.colour} position={item.position} techName={item.name} texturePath={item.path}/>
+          </div>))}
+          </div>
+        </div>
 
 <div className="flex flex-col gap-4 p-2 text-white">
   <motion.p variants={variants} initial="hidden" whileInView={'visible'} viewport={{once:true}} className=' text-2xl font-bold'>Description</motion.p>
