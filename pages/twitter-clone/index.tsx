@@ -19,7 +19,6 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from '@/components/ui/carousel';
-import { TypewriterEffect } from '@/components/ui/typewriter';
 
 type Props = {}
 
@@ -154,14 +153,14 @@ const buttonsVariants={
 
       </div>
   <div className="flex flex-col gap-2 px-2 text-white">
-               <motion.div variants={variants} initial="hidden" whileInView={'visible'} viewport={{once:true}} className='self-start'>
-          <TypewriterEffect words={[{text:"Technologies", className:"text-white text-xl"}, {text:"used", className:"text-white text-xl"}]}/>
-        </motion.div>
-          <motion.div variants={buttonsVariants} initial="hidden" whileInView={'visible'} viewport={{once:true}} className="flex flex-wrap gap-4">
+                 <p  className="text-2xl font-semibold">
+          Technologies used
+        </p>
+          <div  className="flex flex-wrap gap-4">
           {technologiesArray.map((item:LanguageItem, i:any)=>(<div key={i} className='sm:w-24 sm:h-24 xl:h-32 xl:w-32'>
           <MeshCanvas backgroundColour={item.colour} position={item.position} techName={item.name} texturePath={item.path}/>
           </div>))}
-          </motion.div>
+          </div>
         </div>
     </div>
   )

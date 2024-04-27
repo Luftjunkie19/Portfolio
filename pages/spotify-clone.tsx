@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
 import { TbSourceCode } from 'react-icons/tb';
-import { TypewriterEffect } from '@/components/ui/typewriter';
+
 import spotifyImage from '@/assets/images/spotify.png';
 import spotifyImage2 from '@/assets/images/spotify2.png';
 import spotifyImage3 from '@/assets/images/spotify3.png';
@@ -165,17 +165,16 @@ const buttonsVariants={
     </div>
 
     </div>
-      <motion.div variants={buttonsVariants} initial="hidden" whileInView={'visible'} viewport={{once:true}} className="flex flex-col gap-2 px-2 text-white">
-        <motion.div variants={variants} initial="hidden" whileInView={'visible'} viewport={{once:true}} className='self-start'>
-          <TypewriterEffect words={[{text:"Technologies", className:"text-white text-xl"}, {text:"used", className:"text-white text-xl"}]}/>
-        </motion.div>
-        <div className="flex flex-wrap gap-4">
-
-        {technologiesArray.map((item:LanguageItem, i:any)=>(<div key={i} className='sm:w-24 sm:h-24 xl:h-32 xl:w-32'>
-        <MeshCanvas backgroundColour={item.colour} position={item.position} techName={item.name} texturePath={item.path}/>
-        </div>))}
+   <div className="flex flex-col gap-2 px-2 text-white">
+                 <p  className="text-2xl font-semibold">
+          Technologies used
+        </p>
+          <div  className="flex flex-wrap gap-4">
+          {technologiesArray.map((item:LanguageItem, i:any)=>(<div key={i} className='sm:w-24 sm:h-24 xl:h-32 xl:w-32'>
+          <MeshCanvas backgroundColour={item.colour} position={item.position} techName={item.name} texturePath={item.path}/>
+          </div>))}
+          </div>
         </div>
-      </motion.div>
   </div>
   )
 }
