@@ -1,8 +1,20 @@
+// Import Swiper styles
+import 'swiper/css';
+import 'swiper/css/pagination';
+
 import React from 'react';
 
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
+import { MdBuild } from 'react-icons/md';
+// import required modules
+import { Pagination } from 'swiper/modules';
+// Import Swiper React components
+import {
+  Swiper,
+  SwiperSlide,
+} from 'swiper/react';
 
 import {
   CardBody,
@@ -14,10 +26,13 @@ import { Button } from '@/components/ui/button';
 import bookfreakImage from '../images/bookfreak.png';
 import spotifyImage from '../images/spotify.png';
 import twitterImage from '../images/twitter1.png';
+import virtuEstateImage from '../images/virtuestate1.png';
 
 type Props = {}
 
-function Projects({}: Props) {
+
+function Projects({ }: Props) {
+  const conditionalNumber = 0 < 660 ? 1 : 2;
 
   const variants= {
     hidden:{
@@ -47,8 +62,21 @@ function Projects({}: Props) {
       <p className="text-3xl font-bold text-white">My Projects</p>
       <p className=" max-w-xl text-white">Through my entire journey with coding, I have built many great projects, that even haven't been stored on github, but here's the Top 3.</p>
 
-<motion.div variants={variants} initial={'hidden'} whileInView={'visible'} viewport={{once:true}} className="flex flex-wrap gap-6 items-center justify-around">
-        <CardContainer className="inter-var">
+  
+
+
+      <motion.div variants={variants} initial={'hidden'} whileInView={'visible'} viewport={{ once: true }} className="flex flex-wrap gap-6 items-center justify-around">
+                  <Swiper
+        slidesPerView={conditionalNumber}
+        spaceBetween={30}
+        pagination={{
+          clickable: true,
+        }}
+        modules={[Pagination]}
+        className="mySwiper"
+      >
+          <SwiperSlide>
+    <CardContainer className="inter-var">
           <CardBody className="bg-gray-50 flex flex-col gap-1 relative group/card  dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-auto max-w-sm h-auto rounded-xl p-4 border">
          
             <CardItem className="w-full h-72">
@@ -69,9 +97,11 @@ function Projects({}: Props) {
                         </Link>
             </CardItem>
           </CardBody>
-</CardContainer>
+            </CardContainer>
+          </SwiperSlide>
         
-        <CardContainer className="inter-var">
+          <SwiperSlide>
+            <CardContainer className="inter-var">
           <CardBody className="bg-gray-50 flex flex-col gap-1 relative group/card  dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-auto max-w-sm h-auto rounded-xl p-6 border">
          
             <CardItem className="w-full h-72">
@@ -92,9 +122,10 @@ function Projects({}: Props) {
                         </Link>
             </CardItem>
           </CardBody>
-        </CardContainer>
-        
-               <CardContainer className="inter-var">
+            </CardContainer>
+          </SwiperSlide>
+          <SwiperSlide>
+                           <CardContainer className="inter-var">
           <CardBody className="bg-gray-50 flex flex-col gap-1 relative group/card  dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-auto max-w-sm h-auto rounded-xl p-6 border">
          
             <CardItem className="w-full h-72">
@@ -116,6 +147,36 @@ function Projects({}: Props) {
             </CardItem>
           </CardBody>
 </CardContainer>
+        </SwiperSlide>
+        <SwiperSlide>         <CardContainer className="inter-var">
+          <CardBody className="bg-gray-50 flex flex-col gap-1 relative group/card  dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-auto max-w-sm h-auto rounded-xl p-6 border">
+         
+            <CardItem className="w-full h-72">
+              <Image  className='w-full h-full object-cover rounded-lg' src={virtuEstateImage} alt={''}/>
+         </CardItem>
+         
+            <CardItem className="flex justify-between items-center w-full">
+              <p className=" font-bold text-2xl">VirtuEstate</p>
+              <p className=" bg-yellow-500 flex gap-2 items-center py-1 px-2 text-white rounded-xl">In Build <MdBuild className="text-white"/></p>
+            </CardItem>
+
+               <CardItem>
+              <p>VirtuEstate is a project, that has been created in order to use my ThreeJS knowledge in practice. This Project tends to become a revolution for Marketplace apps, because of the ability to show more over what a certain property looks like.</p>
+            </CardItem>
+
+                      <CardItem className='flex justify-between py-2'>
+                      <Link href='/twitter-clone'>
+<Button>Show more</Button>
+                        </Link>
+            </CardItem>
+          </CardBody>
+</CardContainer></SwiperSlide>
+      </Swiper>
+
+        
+
+        
+
 
 </motion.div>
     </div>
