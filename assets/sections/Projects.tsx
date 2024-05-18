@@ -27,12 +27,14 @@ import bookfreakImage from '../images/bookfreak.png';
 import spotifyImage from '../images/spotify.png';
 import twitterImage from '../images/twitter1.png';
 import virtuEstateImage from '../images/virtuestate1.png';
+import { useWindowSize } from '@/lib/useWindowSizes';
 
 type Props = {}
 
 
 function Projects({ }: Props) {
-  const conditionalNumber = 0 < 660 ? 1 : 2;
+  const sizes= useWindowSize();
+  const conditionalNumber = (sizes as {width:number, height:number}).width < 660 ? 1 : 2;
 
   const variants= {
     hidden:{
