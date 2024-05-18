@@ -167,7 +167,7 @@ function Projects({ }: Props) {
             </CardItem>
 
                       <CardItem className='flex justify-between py-2'>
-                      <Link href='/twitter-clone'>
+                      <Link href='/virtuestate'>
 <Button>Show more</Button>
                         </Link>
             </CardItem>
