@@ -111,10 +111,10 @@ function VirtuEstateDetailed({ }: Props) {
       }} className='lg:w-64 lg:h-64 sm:w-52 sm:h-52 2xl:w-80 2xl:h-80 self-center'>
         <CarouselContent>
           <CarouselItem>
-            <Image className='lg:w-64 lg:h-64 sm:w-52 sm:h-52 2xl:w-80 2xl:h-80 object-contain w-full h-full rounded-lg'  src={virtuEstate1} alt={''}/>
+            <Image className='lg:w-64 lg:h-64 sm:w-52 sm:h-52 2xl:w-80 2xl:h-80 object-scale-down w-full h-full rounded-lg'  src={virtuEstate1} alt={''}/>
           </CarouselItem>
           <CarouselItem >
-            <Image className='lg:w-64 lg:h-64 sm:w-52 sm:h-52 2xl:w-80 2xl:h-80 object-contain w-full h-full rounded-lg'  src={virtuEstate2} alt={''}/>
+            <Image className='lg:w-64 lg:h-64 sm:w-52 sm:h-52 2xl:w-80 2xl:h-80 object-scale-down w-full h-full rounded-lg'  src={virtuEstate2} alt={''}/>
           </CarouselItem>
 
         </CarouselContent>
