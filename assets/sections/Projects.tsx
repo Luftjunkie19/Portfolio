@@ -26,7 +26,7 @@ import { Button } from '@/components/ui/button';
 import bookfreakImage from '../images/bookfreak.png';
 import spotifyImage from '../images/spotify.png';
 import twitterImage from '../images/twitter1.png';
-import virtuEstateImage from '../images/virtuestate1.png';
+import virtuEstateImage from '../images/virtuestate2.png';
 import { useWindowSize } from '@/lib/useWindowSizes';
 
 type Props = {}

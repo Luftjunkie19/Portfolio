@@ -5,8 +5,9 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { MdOutlineWeb } from 'react-icons/md';
 
-import virtuEstate1 from '@/assets/images/virtuestate1.png';
-import virtuEstate2 from '@/assets/images/virtuestate2.png';
+import virtuEstate1 from '@/assets/images/VirtuEstateApp1.png';
+import virtuEstate2 from '@/assets/images/VirtuEstateApp2.png';
+import virtuEstate3 from '@/assets/images/VirtuEstateApp3.png';
 import MeshCanvas from '@/assets/meshes/LanguageMesh';
 import { LanguageItem } from '@/assets/sections/TechSection';
 import { Button } from '@/components/ui/button';
@@ -111,10 +112,13 @@ function VirtuEstateDetailed({ }: Props) {
       }} className='lg:w-64 lg:h-64 sm:w-52 sm:h-52 2xl:w-80 2xl:h-80 self-center'>
         <CarouselContent>
           <CarouselItem>
-            <Image className='lg:w-64 lg:h-64 sm:w-52 sm:h-52 2xl:w-80 2xl:h-80 object-scale-down w-full h-full rounded-lg'  src={virtuEstate1} alt={''}/>
+            <Image className='lg:w-64 lg:h-64 sm:w-52 sm:h-52 2xl:w-80 2xl:h-80 object-cover w-full h-full rounded-lg'  src={virtuEstate1} alt={''}/>
           </CarouselItem>
           <CarouselItem >
-            <Image className='lg:w-64 lg:h-64 sm:w-52 sm:h-52 2xl:w-80 2xl:h-80 object-scale-down w-full h-full rounded-lg'  src={virtuEstate2} alt={''}/>
+            <Image className='lg:w-64 lg:h-64 sm:w-52 sm:h-52 2xl:w-80 2xl:h-80 object-cover w-full h-full rounded-lg'  src={virtuEstate2} alt={''}/>
+          </CarouselItem>
+          <CarouselItem >
+            <Image className='lg:w-64 lg:h-64 sm:w-52 sm:h-52 2xl:w-80 2xl:h-80 object-cover w-full h-full rounded-lg'  src={virtuEstate3} alt={''}/>
           </CarouselItem>
 
         </CarouselContent>

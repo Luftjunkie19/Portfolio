@@ -5,11 +5,11 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { TbSourceCode } from 'react-icons/tb';
 
-import spotifyImage from '@/assets/images/spotify.png';
-import spotifyImage2 from '@/assets/images/spotify2.png';
-import spotifyImage3 from '@/assets/images/spotify3.png';
-import spotifyImage4 from '@/assets/images/spotify4.png';
-import spotifyImage5 from '@/assets/images/spotify5.png';
+import spotifyImage from '@/assets/images/SpotifyApp1.png';
+import spotifyImage2 from '@/assets/images/SpotifyApp2.png';
+import spotifyImage3 from '@/assets/images/SpotifyApp3.png';
+import spotifyImage4 from '@/assets/images/SpotifyApp4.png';
+import spotifyImage5 from '@/assets/images/SpotifyApp5.png';
 import MeshCanvas from '@/assets/meshes/LanguageMesh';
 import { LanguageItem } from '@/assets/sections/TechSection';
 import { Button } from '@/components/ui/button';

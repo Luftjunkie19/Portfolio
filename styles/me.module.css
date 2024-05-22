@@ -6,7 +6,11 @@
 
 
 .spaceBg{
-    background: url('../assets/images/space.jpg') fixed no-repeat;
+    background: url('../assets/images/space-bg.jpg');
+    background-attachment:fixed;
+    background-repeat: no-repeat;
+    background-size:cover;
+    background-clip: content-box;
 }
 
 .transition{
