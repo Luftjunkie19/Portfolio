@@ -7,9 +7,9 @@ function FirstScene() {
 
 
   return ( 
-    <mesh scale={1.15}>
+    <mesh scale={2.75} renderOrder={1} >
 <sphereGeometry />
-<MeshDistortMaterial color={'#5D3F6A'} speed={2} distort={0.5} attach={'material'}/>
+<MeshDistortMaterial depthTest={false} color={'#5D3F6A'} speed={2} distort={0.5} attach={'material'}/>
     </mesh>
   )
 }

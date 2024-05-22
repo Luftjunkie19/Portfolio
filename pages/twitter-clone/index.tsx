@@ -5,8 +5,8 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { TbSourceCode } from 'react-icons/tb';
 
-import twitterImage from '@/assets/images/twitter1.png';
-import twitterImage2 from '@/assets/images/twitter2.png';
+import twitterImage from '@/assets/images/TwitterApp1.png';
+import twitterImage2 from '@/assets/images/TwitterApp2.png';
 import twitterImage3 from '@/assets/images/twitter3.png';
 import twitterImage4 from '@/assets/images/twitter4.png';
 import MeshCanvas from '@/assets/meshes/LanguageMesh';
