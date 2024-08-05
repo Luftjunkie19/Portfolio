@@ -26,12 +26,15 @@ import { Button } from '@/components/ui/button';
 import bookfreakImage from '../images/bookfreak.png';
 import spotifyImage from '../images/spotify.png';
 import twitterImage from '../images/twitter1.png';
-import virtuEstateImage from '../images/virtuestate1.png';
+import virtuEstateImage from '../images/virtuestate2.png';
+import { useWindowSize } from '@/lib/useWindowSizes';
 
 type Props = {}
 
 
 function Projects({ }: Props) {
+  const sizes= useWindowSize();
+  const conditionalNumber = (sizes as {width:number, height:number}).width < 660 ? 1 : 2;
 
 
   const variants= {
@@ -181,7 +184,7 @@ function Projects({ }: Props) {
             </CardItem>
 
                       <CardItem className='flex justify-between py-2'>
-                      <Link href='/twitter-clone'>
+                      <Link href='/virtuestate'>
 <Button>Show more</Button>
                         </Link>
             </CardItem>
