@@ -32,7 +32,7 @@ type Props = {}
 
 
 function Projects({ }: Props) {
-  const conditionalNumber = 0 < 660 ? 1 : 2;
+
 
   const variants= {
     hidden:{
@@ -67,8 +67,20 @@ function Projects({ }: Props) {
 
       <motion.div variants={variants} initial={'hidden'} whileInView={'visible'} viewport={{ once: true }} className="flex flex-wrap gap-6 items-center justify-around">
                   <Swiper
-        slidesPerView={conditionalNumber}
-        spaceBetween={30}
+          spaceBetween={16}
+          breakpoints={{
+            0: {
+              slidesPerView:1,
+            },
+            
+            1024: {
+              slidesPerView:2,
+            },
+
+            1440: {
+              slidesPerView:3,
+            }
+          }}
         pagination={{
           clickable: true,
         }}
@@ -77,19 +89,23 @@ function Projects({ }: Props) {
       >
           <SwiperSlide>
     <CardContainer className="inter-var">
-          <CardBody className="bg-gray-50 flex flex-col gap-1 relative group/card  dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-auto max-w-sm h-auto rounded-xl p-4 border">
-         
+          <CardBody className="bg-gray-50 flex flex-col gap-1 relative group card justify-between  dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-auto max-w-sm h-auto rounded-xl p-4 border">
+                <CardItem>
             <CardItem className="w-full h-72">
               <Image  className='w-full h-full object-cover rounded-lg' src={bookfreakImage} alt={''}/>
          </CardItem>
          
-            <CardItem>
-              <p className=" font-bold text-2xl">BookFreak (Mobile)</p>
+     
+        <CardItem className="flex justify-between items-center w-full gap-2 py-2">
+             <p className=" font-bold text-2xl">BookFreak (Mobile)</p>
+              <p className="  flex gap-1 items-center p-1 text-white rounded-xl">In Build <MdBuild className="text-white"/></p>
             </CardItem>
+       
 
                <CardItem>
               <p>BookFreak is web as also an mobile app, which enables the users to track their reading progress, give recensions about book user has read, see the statistics about the most read category or ratio of user's read book's pages and entire book's pages...</p>
             </CardItem>
+         </CardItem>
 
             <CardItem className='flex justify-between py-2'>
             <Link href='/bookfreak'>
@@ -157,7 +173,7 @@ function Projects({ }: Props) {
          
             <CardItem className="flex justify-between items-center w-full">
               <p className=" font-bold text-2xl">VirtuEstate</p>
-              <p className=" bg-yellow-500 flex gap-2 items-center py-1 px-2 text-white rounded-xl">In Build <MdBuild className="text-white"/></p>
+
             </CardItem>
 
                <CardItem>

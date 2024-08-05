@@ -38,9 +38,9 @@ function HeroSection() {
     }
   }
   return (
-    <div className={`${classes.spaceBg}`}>
+    <div className={`flex lg:h-[70vh] xl:h-[80vh] sm:flex-col-reverse lg:flex-row py-4 gap-8 lg:max-w-7xl lg:items-center px-2 sm:jutify-center lg:justify-around 2xl:justify-between  lg:my-0 lg:mx-auto relative top-0 left-0`}>
+                  <div className='absolute inset-0 blur-[118px] max-w-lg h-[800px] mx-auto sm:max-w-3xl sm:h-[400px]' style={{ background: "linear-gradient(106.89deg, rgba(192, 132, 252, 0.11) 15.73%, rgba(14, 165, 233, 0.41) 15.74%, rgba(232, 121, 249, 0.26) 56.49%, rgba(79, 70, 229, 0.4) 115.91%)" }}></div>
 
-      <div className={`flex lg:h-[70vh] xl:h-[80vh] sm:flex-col-reverse lg:flex-row py-4 gap-8 lg:max-w-7xl lg:items-center px-2 sm:jutify-center lg:justify-around 2xl:justify-between lg:my-0 lg:mx-auto`}>
           <motion.div variants={variants} initial={'outview'} whileInView={'inview'} viewport={{once:true}} animate className="flex flex-col gap-6 max-w-xl lg:w-1/2 text-white">
               <p className="text-4xl font-bold">Hello, I am <Typewriter loop typeSpeed={200} words={['Fullstack Developer', 'Programming Enthusiast', 'Development Enthusiast']}/></p>
             <p className="text-xl">19-year old fullstack developer, passioned about programming, technologies and self improvement. Since July 2022 as I started my 
@@ -56,7 +56,7 @@ function HeroSection() {
             </Suspense>
           </div>
     </div>
-    </div>
+
   )
 }
 

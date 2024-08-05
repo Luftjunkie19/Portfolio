@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-
+import classes from '../../styles/styles.module.css'
 import Navbar from './Navbar';
 import Drawer from './Drawer';
 
@@ -13,13 +13,13 @@ function Layout({children}: Props) {
     setHamburger(false);
   }
 
-    return (<div className='min-h-screen w-screen bg-bgColour'>
+  return (<div className={`min-h-screen w-screen bg-bgColour`}>
         <Navbar hamburgerOpen={hamburgerState} setHamburgerOpen={setHamburger} />
   
 
         <Drawer closeHamburger={closeHamburger} hamburgerState={hamburgerState}/>
 
-        <div className="h-full w-full">  
+    <div className={`h-full w-full bg-bgColour `}>  
 {children}
 </div>
 
